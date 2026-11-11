@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AbiYarn - Handcrafted Crochet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Indie+Flower&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/modals.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="icon" type="image/png" href="assets/AbiYarnFavicon.png">
+</head>
+<body class="auth-logged-out">
 
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/logoone.png" alt="AbiYarn Logo" class="logo-img" />
+          </a>
+        </div>
+        <nav class="nav">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="menu.html">Menu</a>
+          <a href="reviews.php">Reviews</a>
+          <a href="inquiry.html">Order Inquiry</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+          <div class="account-area" id="accountArea">
+            <button class="account-btn" id="accountBtn" aria-label="Account">
+              👤 <span id="accountLabel" class="account-label-text">Login</span>
+            </button>
+            <div class="account-dropdown" id="accountDropdown">
+              <div class="account-dropdown-name" id="accountName"></div>
+              <a href="admin/index.php" id="accountAdminLink" class="account-dropdown-link" style="display:none">🛠️ Admin Dashboard</a>
+              <button class="account-dropdown-link" id="logoutBtn">↩️ Log out</button>
+            </div>
+          </div>
+          <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+            🛍️ <span class="cart-count" id="cartCount">0</span>
+          </button>
+          <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <img src="assets/logoone.png" alt="AbiYarn" class="mobile-logo" />
+        <button class="mobile-close" id="mobileClose">×</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="inquiry.html">Order Inquiry</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="badge">✨ Handcrafted with Love</span>
+          <h1 class="hero-title">
+            Crochet Magic,<br />
+            <span class="gradient-text">One Stitch at a Time</span>
+          </h1>
+          <p class="hero-desc">
+            Welcome to AbiYarn, where creativity meets craftsmanship. Each piece is
+            lovingly handmade with quality yarn, perfect for gifts, keepsakes, and
+            everyday warmth.
+          </p>
+          <div class="hero-buttons">
+            <a href="menu.html" class="btn btn-primary">🛍️ Shop Now</a>
+            <a href="inquiry.html" class="btn btn-secondary">✉️ Custom Orders</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1716400128984-3681f2005d22?w=800"
+            alt="Beautiful crochet flowers"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="highlights">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose AbiYarn?</h2>
+        <p>Every piece tells a story — made with heart, crafted with skill.</p>
+      </div>
+      <div class="highlights-grid">
+        <div class="highlight-card">
+          <div class="highlight-icon">❤️</div>
+          <h3>Handmade</h3>
+          <p>Every piece crafted with love and care</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">✨</div>
+          <h3>Quality Yarn</h3>
+          <p>Premium materials for lasting beauty</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">📦</div>
+          <h3>Custom Orders</h3>
+          <p>Personalized pieces just for you</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🛍️</div>
+          <h3>Perfect Gifts</h3>
+          <p>Thoughtful presents for loved ones</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS PREVIEW -->
+  <section class="featured">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Products</h2>
+        <p>A taste of what we lovingly craft for you</p>
+      </div>
+      <div class="featured-grid" id="featuredGrid"></div>
+      <div class="featured-cta">
+        <a href="menu.html" class="btn btn-primary">View Full Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/logotwo.png" alt="AbiYarn" class="footer-logo" />
+          <p>Handcrafted crochet pieces made with love and quality yarn.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="menu.html">Menu</a>
+          <a href="inquiry.html">Order Inquiry</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <p>Follow us for updates on new designs and special offers!</p>
+          <p class="footer-location">📍 Philippines &nbsp;|&nbsp; 📅 Est. 2023</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AbiYarn. All rights reserved. Made with love, one stitch at a time. 🧶</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LOGIN / REGISTER MODAL -->
+  <div class="modal" id="authModal">
+    <div class="modal-overlay" id="authOverlay"></div>
+    <div class="modal-content auth-modal-content">
+      <div class="modal-header">
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" id="authTabLogin">Login</button>
+          <button type="button" class="auth-tab" id="authTabRegister">Create Account</button>
+        </div>
+        <button class="close-btn" id="closeAuthBtn">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="authError" class="auth-error" style="display:none"></div>
+
+        <form id="loginForm" class="auth-form">
+          <div class="field">
+            <label>Username</label>
+            <input type="text" name="username" required autocomplete="username">
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" name="password" required autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Login</button>
+        </form>
+
+        <form id="registerForm" class="auth-form" style="display:none">
+          <div class="field">
+            <label>Full Name</label>
+            <input type="text" name="full_name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label>Username</label>
+            <input type="text" name="username" required autocomplete="username">
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" name="password" required minlength="6" autocomplete="new-password">
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2>Your Cart (<span id="cartItemCount">0</span>)</h2>
+        <button class="close-btn" id="closeCartBtn">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Subtotal:</span>
+          <span class="total-price" id="cartTotal">₱0.00</span>
+        </div>
+        <a href="menu.html" class="btn btn-secondary btn-full" id="continueShoppingBtn">Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/icons.js"></script>
+  <script src="api/products.php"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Render 4 featured products on home page
+    document.addEventListener('DOMContentLoaded', () => {
+      const featured = PRODUCTS.slice(0, 4);
+      document.getElementById('featuredGrid').innerHTML = featured.map(p => `
+        <div class="featured-card">
+          <div class="featured-image">
+            <img src="${p.image}" alt="${p.name}" loading="lazy" />
+          </div>
+          <div class="featured-info">
+            <span class="product-category">${p.category}</span>
+            <h3>${p.name}</h3>
+            <p>${p.description}</p>
+            <div class="featured-footer">
+              <span class="product-price">${formatPrice(p.price)}</span>
+              <button class="btn btn-primary btn-sm" onclick="addToCart(${p.id})">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>

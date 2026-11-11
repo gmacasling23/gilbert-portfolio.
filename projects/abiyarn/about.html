@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - AbiYarn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Indie+Flower&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/modals.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="icon" type="image/png" href="assets/AbiYarnFavicon.png">
+</head>
+<body class="auth-logged-out">
+
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/logoone.png" alt="AbiYarn Logo" class="logo-img" />
+          </a>
+        </div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="menu.html">Menu</a>
+          <a href="reviews.php">Reviews</a>
+          <a href="inquiry.html">Order Inquiry</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+          <div class="account-area" id="accountArea">
+            <button class="account-btn" id="accountBtn" aria-label="Account">
+              👤 <span id="accountLabel" class="account-label-text">Login</span>
+            </button>
+            <div class="account-dropdown" id="accountDropdown">
+              <div class="account-dropdown-name" id="accountName"></div>
+              <a href="admin/index.php" id="accountAdminLink" class="account-dropdown-link" style="display:none">🛠️ Admin Dashboard</a>
+              <button class="account-dropdown-link" id="logoutBtn">↩️ Log out</button>
+            </div>
+          </div>
+          <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+            🛍️ <span class="cart-count" id="cartCount">0</span>
+          </button>
+          <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <img src="assets/logoone.png" alt="AbiYarn" class="mobile-logo" />
+        <button class="mobile-close" id="mobileClose">×</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="inquiry.html">Order Inquiry</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>About Us</h1>
+      <p>The story behind every stitch</p>
+    </div>
+  </section>
+
+  <section class="our-story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-image">
+          <img
+            src="assets/makers/IMG_20260524_170749_554~2.jpg"
+            alt="Yarn and crochet tools"
+          />
+        </div>
+        <div class="story-content">
+          <span class="badge">Est. 2023</span>
+          <h2>Our Story</h2>
+          <p>
+            AbiYarn started as a passion project — a love for yarn, color, and the
+            meditative joy of crocheting. What began as handmade gifts for family
+            and friends quickly grew into a small business rooted in creativity
+            and craftsmanship.
+          </p>
+          <p>
+            Every bouquet, flower, blanket, and custom piece is made by hand with
+            careful attention to detail. We believe that handmade items carry a
+            warmth and intention that mass-produced goods simply can't replicate.
+          </p>
+          <p>
+            Based in the Philippines, we ship our creations with love — each one
+            wrapped and ready to bring a smile to whoever receives it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-features">
+    <div class="container">
+      <div class="section-header">
+        <h2>What We Stand For</h2>
+        <p>Our values guide every stitch we make</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">❤️</div>
+          <h3>Made with Love</h3>
+          <p>Every piece is handcrafted with patience and genuine care for our customers.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3>Quality First</h3>
+          <p>We use only premium yarn and materials to ensure lasting beauty and durability.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌸</div>
+          <h3>Creativity</h3>
+          <p>Each design is thoughtfully crafted — from classic bouquets to unique custom pieces.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Community</h3>
+          <p>We love connecting with our customers and bringing ideas to life together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="maker">
+    <div class="container">
+      <div class="section-header">
+        <h2>Meet the Team</h2>
+        <p>The hands and hearts behind AbiYarn</p>
+      </div>
+
+      <div class="maker-card">
+        <div class="maker-avatar">
+          <img src="assets/makers/abii.jpeg" alt="Abi" class="maker-pics">
+        </div>
+        <div class="maker-info">
+          <h3>Abi</h3>
+          <p class="maker-title">Founder & Lead Crafter</p>
+          <p>
+            Hi! I'm Abi — the crafter, dreamer, and yarn enthusiast behind AbiYarn.
+            I started crocheting as a hobby and fell completely in love with creating
+            things that make people happy. Whether it's a bouquet for a birthday,
+            a blanket for a new baby, or a custom piece for a special occasion,
+            I pour my heart into every single item.
+          </p>
+          <p>Thank you for supporting handmade! 🌸</p>
+        </div>
+      </div>
+
+      <div class="maker-card">
+        <div class="maker-avatar">
+          <img src="assets/makers/ela.jpeg" alt="Ela" class="maker-pics">
+        </div>
+        <div class="maker-info">
+          <h3>Ela</h3>
+          <p class="maker-title">Manager</p>
+          <p>
+            Hello! I'm Ela, the manager keeping everything running smoothly behind the scenes. 
+            From handling your design order logistics to tracking our schedule, I make sure 
+            your beautifully handcrafted crochet pieces arrive perfectly on time!
+          </p>
+          <p>Thank you for checking out our collections! ✨</p>
+        </div>
+      </div>
+
+      <div class="maker-card-bot">
+        <div class="maker-avatar">
+          <img src="assets/makers/jess.jpeg" alt="Jess" class="maker-pics">
+        </div>
+        <div class="maker-info">
+          <h3>Jess</h3>
+          <p class="maker-title">Photographer & Crafter</p>
+          <p>
+            Hi there! I'm Jess. I focus on capturing the vibrant colors and detailed 
+            stitches of our items through photography, while also helping craft custom 
+            pieces whenever inspiration strikes. 
+          </p>
+          <p>We can't wait to stitch up something special for you! 🧶</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about-cta">
+    <div class="container">
+      <h2>Ready to find something you'll love?</h2>
+      <p>Browse our full collection or reach out for a custom order.</p>
+      <div class="cta-buttons">
+        <a href="menu.html" class="btn btn-primary">Shop Our Collection</a>
+        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/logotwo.png" alt="AbiYarn" class="footer-logo" />
+          <p>Handcrafted crochet pieces made with love and quality yarn.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="menu.html">Menu</a>
+          <a href="inquiry.html">Order Inquiry</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <p>Follow us for updates on new designs and special offers!</p>
+          <p class="footer-location">📍 Philippines &nbsp;|&nbsp; 📅 Est. 2023</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AbiYarn. All rights reserved. Made with love, one stitch at a time. 🧶</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="authModal">
+    <div class="modal-overlay" id="authOverlay"></div>
+    <div class="modal-content auth-modal-content">
+      <div class="modal-header">
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" id="authTabLogin">Login</button>
+          <button type="button" class="auth-tab" id="authTabRegister">Create Account</button>
+        </div>
+        <button class="close-btn" id="closeAuthBtn">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="authError" class="auth-error" style="display:none"></div>
+        <form id="loginForm" class="auth-form">
+          <div class="field"><label>Username</label><input type="text" name="username" required autocomplete="username"></div>
+          <div class="field"><label>Password</label><input type="password" name="password" required autocomplete="current-password"></div>
+          <button type="submit" class="btn btn-primary btn-full">Login</button>
+        </form>
+        <form id="registerForm" class="auth-form" style="display:none">
+          <div class="field"><label>Full Name</label><input type="text" name="full_name" required autocomplete="name"></div>
+          <div class="field"><label>Email</label><input type="email" name="email" required autocomplete="email"></div>
+          <div class="field"><label>Username</label><input type="text" name="username" required autocomplete="username"></div>
+          <div class="field"><label>Password</label><input type="password" name="password" required minlength="6" autocomplete="new-password"></div>
+          <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2>Your Cart (<span id="cartItemCount">0</span>)</h2>
+        <button class="close-btn" id="closeCartBtn">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Subtotal:</span>
+          <span class="total-price" id="cartTotal">₱0.00</span>
+        </div>
+        <a href="menu.html" class="btn btn-secondary btn-full">Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/icons.js"></script>
+  <script src="api/products.php"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+/* ============================================
+   HEADER & NAVIGATION - AbiYarn
+   ============================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #ffe4e6;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+/* Logo */
+.logo a { display: flex; align-items: center; }
+.logo-img {
+  height: 64px;
+  width: 64px;
+  object-fit: contain;
+}
+
+/* Desktop Nav */
+.nav { display: flex; gap: 1.75rem; }
+.nav a {
+  color: var(--gray-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--rose);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+.nav a:hover,
+.nav a.active { color: var(--rose); }
+.nav a.active::after,
+.nav a:hover::after { width: 100%; }
+
+/* Header Right */
+.header-right { display: flex; align-items: center; gap: 0.75rem; }
+
+/* Cart Button */
+.cart-btn {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+.cart-btn:hover { background: var(--rose-light); }
+.cart-count {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--rose);
+  color: var(--white);
+  font-size: 0.7rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--gray-text);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Mobile Nav */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.5);
+}
+.mobile-nav.open { display: block; }
+.mobile-nav-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background: var(--white);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+}
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.mobile-logo { height: 52px; width: 52px; object-fit: contain; }
+.mobile-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--gray-text);
+  line-height: 1;
+}
+.mobile-close:hover { color: var(--rose); }
+.mobile-nav-links { display: flex; flex-direction: column; gap: 1.5rem; }
+.mobile-nav-links a {
+  font-size: 1.2rem;
+  color: var(--gray-text);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.mobile-nav-links a:hover,
+.mobile-nav-links a.active { color: var(--rose); }

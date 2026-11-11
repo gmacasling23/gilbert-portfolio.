@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - AbiYarn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Indie+Flower&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/modals.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="icon" type="image/png" href="assets/AbiYarnFavicon.png">
+</head>
+<body class="auth-logged-out">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/logoone.png" alt="AbiYarn Logo" class="logo-img" />
+          </a>
+        </div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="menu.html">Menu</a>
+          <a href="reviews.php">Reviews</a>
+          <a href="inquiry.html">Order Inquiry</a>
+          <a href="contact.html" class="active">Contact</a>
+        </nav>
+        <div class="header-right">
+          <div class="account-area" id="accountArea">
+            <button class="account-btn" id="accountBtn" aria-label="Account">
+              👤 <span id="accountLabel" class="account-label-text">Login</span>
+            </button>
+            <div class="account-dropdown" id="accountDropdown">
+              <div class="account-dropdown-name" id="accountName"></div>
+              <a href="admin/index.php" id="accountAdminLink" class="account-dropdown-link" style="display:none">🛠️ Admin Dashboard</a>
+              <button class="account-dropdown-link" id="logoutBtn">↩️ Log out</button>
+            </div>
+          </div>
+          <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+            🛍️ <span class="cart-count" id="cartCount">0</span>
+          </button>
+          <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <img src="assets/logoone.png" alt="AbiYarn" class="mobile-logo" />
+        <button class="mobile-close" id="mobileClose">×</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="inquiry.html">Order Inquiry</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you!</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Have a question, a custom idea, or just want to say hello? Send us a message and we'll get back to you as soon as possible.</p>
+
+          <div class="info-items">
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <h4>Location</h4>
+                <p>Paoslo, Valenzuala City, Philippines</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📧</div>
+              <div>
+                <h4>Email</h4>
+                <p>abiyarn.shop@gmail.com</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📱</div>
+              <div>
+                <h4>Phone / Viber</h4>
+                <p>+63 994 591 6562</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">🕐</div>
+              <div>
+                <h4>Response Time</h4>
+                <p>Within 24 hours</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-note">
+            <p>For custom orders, please use our <a href="inquiry.html">Order Inquiry</a> page for a more detailed form.</p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="name" required placeholder="Your name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" required placeholder="your.email@example.com" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone (Optional)</label>
+                <input type="tel" id="phone" inputmode="numeric" pattern="[0-9]*" placeholder="+63 000 000 0000" />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject">
+                  <option value="general">General Inquiry</option>
+                  <option value="order">About an Order</option>
+                  <option value="custom">Custom Request</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group form-group-full">
+              <label for="message">Message <span class="required">*</span></label>
+              <textarea id="message" required rows="6" placeholder="Write your message here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send Message 💌</button>
+          </form>
+
+          <!-- Success Message -->
+          <div class="contact-success" id="contactSuccess">
+            <div class="success-icon">✓</div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. We'll get back to you soon! 🌸</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/logotwo.png" alt="AbiYarn" class="footer-logo" />
+          <p>Handcrafted crochet pieces made with love and quality yarn.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="menu.html">Menu</a>
+          <a href="inquiry.html">Order Inquiry</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <p>Follow us for updates on new designs and special offers!</p>
+          <p class="footer-location">📍 Philippines &nbsp;|&nbsp; 📅 Est. 2023</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AbiYarn. All rights reserved. Made with love, one stitch at a time. 🧶</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="modal" id="authModal">
+    <div class="modal-overlay" id="authOverlay"></div>
+    <div class="modal-content auth-modal-content">
+      <div class="modal-header">
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" id="authTabLogin">Login</button>
+          <button type="button" class="auth-tab" id="authTabRegister">Create Account</button>
+        </div>
+        <button class="close-btn" id="closeAuthBtn">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="authError" class="auth-error" style="display:none"></div>
+        <form id="loginForm" class="auth-form">
+          <div class="field"><label>Username</label><input type="text" name="username" required autocomplete="username"></div>
+          <div class="field"><label>Password</label><input type="password" name="password" required autocomplete="current-password"></div>
+          <button type="submit" class="btn btn-primary btn-full">Login</button>
+        </form>
+        <form id="registerForm" class="auth-form" style="display:none">
+          <div class="field"><label>Full Name</label><input type="text" name="full_name" required autocomplete="name"></div>
+          <div class="field"><label>Email</label><input type="email" name="email" required autocomplete="email"></div>
+          <div class="field"><label>Username</label><input type="text" name="username" required autocomplete="username"></div>
+          <div class="field"><label>Password</label><input type="password" name="password" required minlength="6" autocomplete="new-password"></div>
+          <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2>Your Cart (<span id="cartItemCount">0</span>)</h2>
+        <button class="close-btn" id="closeCartBtn">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Subtotal:</span>
+          <span class="total-price" id="cartTotal">₱0.00</span>
+        </div>
+        <a href="menu.html" class="btn btn-secondary btn-full">Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="api/products.php"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Keep the phone field digits-only for both typing and pasting.
+    ['phone'].forEach(id => {
+      const input = document.getElementById(id);
+
+      if (input) {
+        input.addEventListener('input', e => {
+          e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+/* ============================================
+   HOME PAGE - AbiYarn
+   ============================================ */
+
+/* HERO */
+.hero { padding: 5rem 0; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.hero-title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--gray-text);
+}
+.gradient-text {
+  background: linear-gradient(to right, #fb7185, var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-desc {
+  font-size: 1.1rem;
+  color: var(--gray-mid);
+  margin-bottom: 2rem;
+  line-height: 1.75;
+}
+.hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+/* HIGHLIGHTS */
+.highlights {
+  padding: 5rem 0;
+  background: var(--white);
+}
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.highlight-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(to bottom, var(--rose-light), var(--white));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.highlight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.highlight-icon { font-size: 2.75rem; margin-bottom: 1rem; }
+.highlight-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.highlight-card p  { font-size: 0.9rem; color: var(--gray-mid); }
+
+/* FEATURED PRODUCTS */
+.featured {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, var(--white), var(--rose-light));
+}
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.featured-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.featured-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+.featured-image {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.featured-card:hover .featured-image img { transform: scale(1.08); }
+.featured-info { padding: 1.25rem; }
+.featured-info h3 { font-size: 1rem; margin: 0.35rem 0; color: var(--gray-text); }
+.featured-info p  { font-size: 0.85rem; color: var(--gray-mid); }
+.featured-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+.featured-cta { text-align: center; }

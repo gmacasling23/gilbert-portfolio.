@@ -1,0 +1,120 @@
+/* ============================================
+   ABOUT PAGE - AbiYarn
+   ============================================ */
+
+/* OUR STORY */
+.our-story {
+  padding: 5rem 0;
+  background: var(--white);
+}
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.story-image img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+.story-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+.story-content p {
+  color: var(--gray-mid);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* FEATURES */
+.about-features {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, var(--white), var(--rose-light));
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.feature-icon { font-size: 2.75rem; margin-bottom: 1rem; }
+.feature-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.feature-card p  { font-size: 0.9rem; color: var(--gray-mid); }
+
+/* MEET THE MAKER */
+.maker {
+  padding: 5rem 0;
+  background: var(--rose-light);
+}
+.maker-card {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+.maker-card-bot {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+.maker-avatar {
+  width: 110px;
+  height: 110px;
+  background: var(--rose-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 3px solid var(--rose-border);
+  overflow: hidden; /* Keeps the profile pictures perfectly bounded inside the circle border */
+}
+
+.maker-pics {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.maker-info h3  { font-size: 1.75rem; margin-bottom: 0.25rem; }
+.maker-title    { color: var(--rose); font-weight: 500; margin-bottom: 1rem; font-size: 0.95rem; }
+.maker-info p   { color: var(--gray-mid); line-height: 1.8; margin-bottom: 0.75rem; font-size: 0.95rem; }
+
+/* ABOUT CTA */
+.about-cta {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--rose-light), #fdf2f8);
+  text-align: center;
+}
+.about-cta h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+.about-cta p  { color: var(--gray-mid); margin-bottom: 2rem; font-size: 1.05rem; }
+.cta-buttons  { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }

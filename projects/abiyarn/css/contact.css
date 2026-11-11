@@ -1,0 +1,101 @@
+/* ============================================
+   CONTACT PAGE - AbiYarn
+   ============================================ */
+
+.contact-section {
+  padding: 4rem 0 5rem;
+  background: linear-gradient(to bottom, var(--white), var(--rose-light));
+}
+
+/* Two-column layout */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* Info Column */
+.contact-info h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.contact-info > p {
+  color: var(--gray-mid);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.info-icon {
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  background: var(--rose-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.info-item h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+  color: var(--gray-text);
+}
+.info-item p {
+  font-size: 0.9rem;
+  color: var(--gray-mid);
+}
+
+.contact-note {
+  background: var(--rose-light);
+  border-left: 4px solid var(--rose);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 0.9rem;
+  color: var(--gray-mid);
+}
+.contact-note a {
+  color: var(--rose);
+  font-weight: 500;
+}
+.contact-note a:hover { text-decoration: underline; }
+
+/* Form Wrapper */
+.contact-form-wrap { width: 100%; }
+
+.contact-form {
+  background: linear-gradient(135deg, var(--rose-light), #fdf2f8);
+  padding: 2.5rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+.contact-form .btn-full { margin-top: 0.5rem; }
+
+/* Success */
+.contact-success {
+  display: none;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--rose-light), #fdf2f8);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+.contact-success.show { display: block; }
+.contact-success h3 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+.contact-success p { color: var(--gray-mid); }

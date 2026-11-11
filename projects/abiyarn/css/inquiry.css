@@ -1,0 +1,120 @@
+/* ============================================
+   INQUIRY PAGE - AbiYarn
+   ============================================ */
+
+.inquiry-section {
+  padding: 4rem 0 5rem;
+  background: linear-gradient(to bottom, var(--white), var(--rose-light));
+}
+
+/* Two-column layout */
+.inquiry-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* Form Wrapper */
+.inquiry-form-wrap { width: 100%; }
+
+.inquiry-form {
+  background: linear-gradient(135deg, var(--rose-light), #fdf2f8);
+  padding: 2.5rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+.inquiry-form h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.form-subtitle {
+  color: var(--gray-mid);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+.inquiry-form .btn-full { margin-top: 0.5rem; }
+
+/* Success */
+.inquiry-success {
+  display: none;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--rose-light), #fdf2f8);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+.inquiry-success.show { display: block; }
+.inquiry-success h3 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+.inquiry-success p {
+  color: var(--gray-mid);
+  margin-bottom: 0.5rem;
+}
+
+/* Sidebar */
+.inquiry-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 5rem;
+}
+
+.sidebar-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--rose);
+}
+.sidebar-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--gray-text);
+}
+.sidebar-card p {
+  font-size: 0.9rem;
+  color: var(--gray-mid);
+  line-height: 1.6;
+}
+.sidebar-card a {
+  color: var(--rose);
+  font-weight: 500;
+}
+.sidebar-card a:hover { text-decoration: underline; }
+
+/* How it Works */
+.how-it-works {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.how-it-works li {
+  font-size: 0.875rem;
+  color: var(--gray-mid);
+  line-height: 1.5;
+}
+
+/* Turnaround List */
+.turnaround-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.turnaround-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--gray-mid);
+  border-bottom: 1px dashed var(--gray-border);
+  padding-bottom: 0.4rem;
+}
+.turnaround-list li span:last-child {
+  font-weight: 600;
+  color: var(--rose);
+}

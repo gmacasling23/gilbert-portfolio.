@@ -1,0 +1,158 @@
+/* ============================================
+   LOGIN / ACCOUNT SYSTEM - AbiYarn
+   ============================================ */
+
+/* Account button in header */
+.account-area {
+  position: relative;
+}
+
+.account-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray-text);
+  cursor: pointer;
+  padding: 0.45rem 0.7rem;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+}
+.account-btn:hover { background: var(--rose-light); color: var(--rose-dark); }
+
+/* Dropdown */
+.account-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: var(--white);
+  border: 1px solid var(--rose-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  min-width: 200px;
+  padding: 0.6rem;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 60;
+}
+.account-dropdown.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.account-dropdown-name {
+  padding: 0.4rem 0.6rem 0.6rem;
+  margin-bottom: 0.3rem;
+  border-bottom: 1px solid var(--gray-border);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+.account-dropdown-role {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--rose-dark);
+  background: var(--rose-light);
+  padding: 1px 7px;
+  border-radius: var(--radius-full);
+}
+.account-dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--gray-text);
+  padding: 0.5rem 0.6rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.account-dropdown-link:hover { background: var(--rose-light); color: var(--rose-dark); }
+
+/* Auth modal */
+.auth-modal-content { max-width: 400px; }
+.auth-tabs {
+  display: flex;
+  gap: 1.5rem;
+}
+.auth-tab {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-light);
+  padding: 0.25rem 0;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.auth-tab.active { color: var(--rose-dark); border-bottom-color: var(--rose); }
+
+.auth-form .field { margin-bottom: 1rem; }
+.auth-form label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gray-mid);
+  margin-bottom: 0.35rem;
+}
+.auth-form input {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--gray-border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: #fafafa;
+  color: var(--dark);
+}
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--rose);
+  background: var(--white);
+}
+
+.auth-error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+.auth-success {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+body.auth-logged-out #cartBtn,
+body.auth-logged-out .product-card .add-to-cart,
+body.auth-logged-out .product-card .product-footer > button {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .account-label-text { display: inline; }
+}

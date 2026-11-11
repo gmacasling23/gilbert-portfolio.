@@ -1,0 +1,158 @@
+/* ============================================
+   RESPONSIVE / MEDIA QUERIES - AbiYarn
+   All pages covered
+   ============================================ */
+
+/* ---- Large Desktop (1200px) ---- */
+@media (max-width: 1200px) {
+  .products-grid,
+  .featured-grid      { grid-template-columns: repeat(3, 1fr); }
+  .highlights-grid    { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---- Tablet Landscape (1024px) ---- */
+@media (max-width: 1024px) {
+  /* Home */
+  .hero-title         { font-size: 3rem; }
+  .highlights-grid    { grid-template-columns: repeat(2, 1fr); }
+  .featured-grid      { grid-template-columns: repeat(2, 1fr); }
+
+  /* About */
+  .story-grid         { grid-template-columns: 1fr; gap: 2.5rem; }
+  .story-image img    { height: 340px; }
+  .features-grid      { grid-template-columns: repeat(2, 1fr); }
+  .maker-card         { flex-direction: column; align-items: center; text-align: center; }
+
+  /* Menu */
+  .products-grid      { grid-template-columns: repeat(2, 1fr); }
+
+  /* Inquiry */
+  .inquiry-layout     { grid-template-columns: 1fr; }
+  .inquiry-sidebar    { position: static; display: grid; grid-template-columns: repeat(2, 1fr); }
+
+  /* Contact */
+  .contact-layout     { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Footer */
+  .footer-grid        { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---- Tablet Portrait (768px) ---- */
+@media (max-width: 768px) {
+  /* Header */
+  .nav          { display: none; }
+  .hamburger    { display: flex; }
+
+  /* Page Hero */
+  .page-hero    { padding: 3rem 0 2rem; }
+  .page-hero h1 { font-size: 2.25rem; }
+
+  /* Home - Hero */
+  .hero         { padding: 3rem 0; }
+  .hero-grid    { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-image   { order: -1; }
+  .hero-image img { height: 300px; }
+  .hero-title   { font-size: 2.5rem; }
+  .hero-desc    { font-size: 1rem; }
+
+  /* Home - Highlights */
+  .highlights   { padding: 3rem 0; }
+  .highlights-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+  /* Home - Featured */
+  .featured     { padding: 3rem 0; }
+  .featured-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+  /* About */
+  .our-story    { padding: 3rem 0; }
+  .about-features { padding: 3rem 0; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .maker        { padding: 3rem 0; }
+  .maker-card   { padding: 2rem; gap: 1.5rem; }
+  .about-cta    { padding: 3rem 0; }
+  .cta-buttons  { flex-direction: column; align-items: center; }
+
+  /* Menu */
+  .menu-section { padding: 3rem 0 4rem; }
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+  /* Inquiry */
+  .inquiry-section  { padding: 3rem 0 4rem; }
+  .inquiry-form     { padding: 1.75rem; }
+  .inquiry-sidebar  { grid-template-columns: 1fr; }
+
+  /* Contact */
+  .contact-section  { padding: 3rem 0 4rem; }
+  .contact-form     { padding: 1.75rem; }
+
+  /* Shared form rows */
+  .form-row     { grid-template-columns: 1fr; gap: 0; }
+
+  /* Footer */
+  .footer       { padding: 2.5rem 0 1.5rem; }
+  .footer-grid  { grid-template-columns: 1fr; gap: 1.75rem; }
+
+  /* Cart */
+  .cart-content { max-width: 100%; }
+
+  /* Checkout Modal */
+  .checkout-steps span  { display: none; }
+  .checkout-form-row    { grid-template-columns: 1fr; }
+
+  /* Section headers */
+  .section-header h2 { font-size: 2rem; }
+}
+
+/* ---- Mobile (480px) ---- */
+@media (max-width: 480px) {
+  .container    { padding: 0 1rem; }
+
+  /* Hero */
+  .hero-title   { font-size: 2rem; }
+  .hero-buttons { flex-direction: column; }
+  .hero-buttons .btn { width: 100%; justify-content: center; }
+  .hero-image img { height: 240px; }
+
+  /* Highlights / Features */
+  .highlights-grid,
+  .features-grid { grid-template-columns: 1fr; }
+
+  /* Featured / Products */
+  .featured-grid,
+  .products-grid { grid-template-columns: 1fr; }
+
+  /* About */
+  .maker-avatar { font-size: 3.5rem; width: 80px; height: 80px; }
+  .story-image img { height: 260px; }
+  .about-cta h2 { font-size: 2rem; }
+
+  /* Page hero */
+  .page-hero h1 { font-size: 1.9rem; }
+
+  /* Filters */
+  .category-filters { gap: 0.5rem; }
+  .filter-btn { padding: 0.4rem 1rem; font-size: 0.8rem; }
+
+  /* Section header */
+  .section-header h2 { font-size: 1.75rem; }
+
+  /* Modals */
+  .modal        { padding: 0.5rem; }
+  .modal-content { border-radius: var(--radius-md); }
+  .checkout-step { padding: 1rem; }
+  .checkout-footer { padding: 1rem; }
+
+  /* Inquiry sidebar */
+  .inquiry-sidebar { gap: 1rem; }
+
+  /* CTA */
+  .cta-buttons .btn { width: 100%; justify-content: center; }
+}
+
+/* ---- Small Mobile (360px) ---- */
+@media (max-width: 360px) {
+  .hero-title   { font-size: 1.75rem; }
+  .logo-img     { height: 50px; width: 50px; }
+  .cart-btn     { font-size: 1.25rem; }
+  .page-hero h1 { font-size: 1.65rem; }
+}
