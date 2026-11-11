@@ -1,0 +1,27 @@
+*{box-sizing:border-box}body{margin:0;background:#f2f5fb;color:#1d2940;font:15px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}header{background:#fff;border-bottom:1px solid #dfe5ef;display:flex;align-items:center;justify-content:space-between;padding:18px 5%;gap:20px;flex-wrap:wrap}header>a{font-size:20px;font-weight:800;text-decoration:none;color:#1676da}header b{color:#1d2940}nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:#54627a;text-decoration:none;font-size:13px}nav a:hover,a:hover{color:#1474db}main{max-width:1100px;margin:55px auto;padding:0 22px}.heading span{font-size:11px;font-weight:800;letter-spacing:2px;color:#6595c5}.heading h1{font-size:36px;margin:6px 0 28px;letter-spacing:-1px}.panel{background:white;border:1px solid #dfe5ef;border-radius:18px;padding:28px;margin-bottom:20px;box-shadow:0 12px 36px #244b7910}.panel h2{margin-top:0}.panel p,.sub{color:#65718a}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.stats .panel span{font-size:11px;letter-spacing:2px;color:#7c8ca5}.stats strong{display:block;font-size:32px;margin:6px 0}.narrow{max-width:520px}.wide{max-width:720px}label{display:block;font-weight:650;margin:18px 0;color:#34445f}input,textarea{display:block;width:100%;margin-top:7px;padding:13px;border:1px solid #cbd6e6;border-radius:10px;font:inherit;color:#1d2940;background:#fff}input:focus,textarea:focus{outline:3px solid #c9e5ff;border-color:#2486e3}.actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:20px 0}button,.primary,.secondary,.danger{border:0;border-radius:10px;padding:11px 17px;font:600 13px system-ui;cursor:pointer;text-decoration:none;display:inline-block}.primary{background:#1676da;color:white}.secondary{background:#eaf2ff;color:#1765b6}.danger{background:#fff0f0;color:#c03a4a}.inline{display:inline;margin-left:5px}.error{background:#fff0f1;color:#a72c44;padding:12px;border-radius:10px}.success{background:#e7f8ed;color:#176a39;padding:12px;border-radius:10px}.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:15px;border-bottom:1px solid #edf0f6;vertical-align:middle}th{font-size:12px;color:#7a879a}td small{display:block;color:#7c899d;max-width:350px}td a{color:#1765b6}@media(max-width:650px){.stats{grid-template-columns:1fr}header{padding:16px}main{margin:30px auto}.heading h1{font-size:29px}.panel{padding:18px}}
+
+/* v4 pastel admin polish */
+body{background:#fcf3f8}header{border-bottom-color:#efdae6} .panel{border-color:#edd9e5} a.primary,button.primary{background:#744b91}
+
+/* v10: focused login and simplified authenticated administration */
+.admin-header{padding:14px 4%;gap:20px;flex-wrap:nowrap;box-shadow:0 2px 16px #36213b0a}
+.admin-brand{display:flex;align-items:center;gap:10px;white-space:nowrap;color:#29243a;font-size:17px}
+.admin-brand img{height:31px;width:31px;object-fit:contain;border-radius:50%}
+.admin-header nav{margin-left:auto;display:flex;gap:7px;align-items:center}
+.admin-header nav a{padding:8px 12px;border-radius:9px;font-size:13px;color:#51475f}
+.admin-header nav a:hover,.admin-header nav a:focus-visible{background:#f3e9f3;color:#613875}
+.logout-form{margin:0;flex-shrink:0}
+.logout-button{background:#f3e9f3;color:#6a3d70;padding:9px 14px}
+.logout-button:hover{background:#ead6e8}
+.login-page{min-height:100vh;background:radial-gradient(ellipse at 85% 10%,#f7dce9,transparent 45%),linear-gradient(135deg,#fff9fc,#f3edf8)}
+.login-main{max-width:520px;margin:0 auto;padding:clamp(28px,6vh,65px) 24px 48px}
+.login-brand{display:flex;align-items:center;gap:14px;margin-bottom:44px;font-weight:750;font-size:16px;color:#32273f}
+.login-brand img{width:52px;height:52px;object-fit:contain;border-radius:50%}
+.login-brand small{display:block;font-weight:400;color:#756b80;font-size:12px}
+.login-heading span{font-size:11px;font-weight:800;letter-spacing:2px;color:#855b99}
+.login-heading h1{font-size:clamp(28px,5vw,38px);line-height:1.15;letter-spacing:-1.1px;margin:12px 0}
+.login-heading p{color:#726980;margin:0 0 24px}
+.login-panel{padding:30px;border-radius:20px;box-shadow:0 18px 55px #50355912}
+.login-panel .primary{width:100%;padding:14px;font-size:14px;margin-top:12px}
+.login-panel label{margin:16px 0}
+@media(max-width:720px){.admin-header{flex-wrap:wrap;padding:12px 16px}.admin-header nav{order:3;width:100%;overflow-x:auto;gap:0}.admin-header nav a{white-space:nowrap}.logout-form{margin-left:auto}.login-main{padding:28px 18px}}
