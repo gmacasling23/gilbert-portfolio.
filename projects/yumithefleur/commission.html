@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Commission — Yumi the Fleur</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="png" href="Images/logo/Transparent.png">
+</head>
+<body class="page-bg">
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <div class="container inner">
+    <a href="index.html" class="nav-logo">
+      <img src="Images/logo/Transparent.png" alt="Yumi">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="commission.html" class="active">Commission</a></li>
+    </ul>
+    <div class="nav-auth" id="guestNav">
+      <button class="btn-nav-login"  onclick="openModal('login')">Log in</button>
+      <button class="btn-nav-signup" onclick="openModal('signup')">Sign up</button>
+    </div>
+    <div class="nav-auth" id="userNav" style="display:none;">
+      <span id="navUsername"></span>
+      <button class="btn-nav-login" onclick="logout()">Logout</button>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile-drawer" id="mobileDrawer">
+    <a href="index.html"      onclick="closeMobileNav()">Home</a>
+    <a href="gallery.html"    onclick="closeMobileNav()">Gallery</a>
+    <a href="about.html"      onclick="closeMobileNav()">About</a>
+    <a href="contact.html"    onclick="closeMobileNav()">Contact</a>
+    <a href="commission.html" onclick="closeMobileNav()">Commission</a>
+    <div class="nav-auth-mobile" id="navAuthMobile">
+      <button class="btn-nav-login"  onclick="openModal('login')">Log in</button>
+      <button class="btn-nav-signup" onclick="openModal('signup')">Sign up</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ PAGE HERO ══ -->
+<div class="container">
+  <div class="page-hero">
+    <div class="page-hero-stars" id="heroStars"></div>
+    <div class="page-hero-body">
+      <h1>Ready to Work<br>Together?</h1>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MAIN CONTENT ══ -->
+<div class="commission-wrap">
+
+  <!-- Terms of Service -->
+  <section>
+    <p class="sec-label">Terms of Service</p>
+    <div class="tos-grid">
+      <div class="tos-card-item">
+        <h4>Turn over</h4>
+        <p>5–10 business days depending on complexity and queue.</p>
+      </div>
+      <div class="tos-card-item">
+        <h4>Payment</h4>
+        <p>GCash, Paypal, PayMaya, Vgen &amp; Load (Smart) accepted. Whole Payment after the sketch is approved.</p>
+      </div>
+      <div class="tos-card-item">
+        <h4>Usage Rights</h4>
+        <p>Commercial use is 2× of the total price.</p>
+      </div>
+      <div class="tos-card-item">
+        <h4>Revision</h4>
+        <p>Free revisions are included during the work-in-progress stage. Revisions requested after the artwork is finished will require an additional fee of 10% of the total price.</p>
+      </div>
+      <div class="tos-card-item">
+        <h4>Background</h4>
+        <p>Basic Background are free, detailed background + 10–50% of the total price. It depends on the details.</p>
+      </div>
+      <div class="tos-card-item">
+        <h4>Credits</h4>
+        <p>I'll send the artwork without watermark but client should credit my page @Yumi the fleur.</p>
+      </div>
+      <div class="tos-card-item">
+        <h4>Watermarks</h4>
+        <p>In contradiction to not putting watermark, I'm allowed to post the artwork and use it as examples, unless you paid for commercial use.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Commission -->
+  <section class="how-section" id="how-to">
+    <p class="sec-label">How to Commission</p>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Choose a Style</h4>
+        <p>Browse our commission types — Chibi, Headshot, Body Shot, or Eye Banner.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Fill the Form</h4>
+        <p>Complete the commission request form with character details and references.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Down payment</h4>
+        <p>Send payment once the quote is confirmed to secure your slot.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h4>Receive Art</h4>
+        <p>Get your custom artwork delivered within the agreed timeframe. Enjoy!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Choose Commission Style -->
+  <section>
+    <p class="sec-label">Choose your Commission Style</p>
+    <div class="styles-grid">
+
+      <div class="style-card" onclick="selectStyle(this, 'chibi')">
+        <div class="style-img">
+          <img src="Images/explore-commission/chibi.png" alt="Chibi">
+        </div>
+        <div class="style-info">
+          <h4>Chibi</h4>
+          <div class="style-price">200 PHP / 10 USD</div>
+        </div>
+      </div>
+
+      <div class="style-card" onclick="selectStyle(this, 'whole-body-chibi')">
+        <div class="style-img">
+          <img src="Images/explore-commission/whole-body-detailed-anime-chibi.png" alt="Whole Body Detailed Anime Chibi">
+        </div>
+        <div class="style-info">
+          <h4>Whole Body Detailed Anime Chibi</h4>
+          <div class="style-price">350 PHP / 18 USD</div>
+        </div>
+      </div>
+
+      <div class="style-card" onclick="selectStyle(this, 'icon-chibi')">
+        <div class="style-img">
+          <img src="Images/explore-commission/icon-chibi.jpg" alt="Icon Chibi">
+        </div>
+        <div class="style-info">
+          <h4>Icon Chibi</h4>
+          <div class="style-price">50 PHP / 5 USD</div>
+        </div>
+      </div>
+
+      <div class="style-card" onclick="selectStyle(this, 'chibi-additional')">
+        <div class="style-img">
+          <img src="Images/explore-commission/chibi-with-additional-details.png" alt="Chibi with Additional Details & Characters">
+        </div>
+        <div class="style-info">
+          <h4>Chibi with Additional Details &amp; Characters</h4>
+          <div class="style-price">50 PHP / 5 USD</div>
+        </div>
+      </div>
+
+      <div class="style-card" onclick="selectStyle(this, 'anime')">
+        <div class="style-img">
+          <img src="Images/explore-commission/anime.png" alt="Anime">
+        </div>
+        <div class="style-info">
+          <h4>Anime</h4>
+          <div class="style-price">200–400 PHP / 10–20 USD</div>
+        </div>
+      </div>
+
+      <div class="style-card" onclick="selectStyle(this, 'background')">
+        <div class="style-img">
+          <img src="Images/explore-commission/background.png" alt="Detailed Background">
+        </div>
+        <div class="style-info">
+          <h4>Detailed Background</h4>
+          <div class="style-price">500–2000 PHP / 30–50 USD</div>
+        </div>
+      </div>
+
+      <div class="style-card" onclick="selectStyle(this, 'eye-banner')">
+        <div class="style-img">
+          <img src="Images/explore-commission/eye-banner.png" alt="Chibi Eye Banner">
+        </div>
+        <div class="style-info">
+          <h4>Chibi Eye Banner</h4>
+          <div class="style-price">50 PHP / 5 USD</div>
+        </div>
+      </div>
+
+      <div class="style-card" onclick="selectStyle(this, 'chibi-2nd')">
+        <div class="style-img">
+          <img src="Images/explore-commission/chibi-2nd-style.png" alt="Chibi (2nd Style)">
+        </div>
+        <div class="style-info">
+          <h4>Chibi (2nd Style)</h4>
+          <div class="style-price">50–80 PHP / 5–8 USD</div>
+        </div>
+      </div>
+
+      <div class="style-card" onclick="selectStyle(this, 'bowls-chibi')">
+        <div class="style-img">
+          <img src="Images/explore-commission/bowls-chibi-ych.png" alt="Bowls Chibi YCH">
+        </div>
+        <div class="style-info">
+          <h4>Bowls Chibi YCH</h4>
+          <div class="style-price">80 PHP / 8 USD</div>
+        </div>
+      </div>
+
+      <div class="style-card" onclick="selectStyle(this, 'padoru')">
+        <div class="style-img">
+          <img src="Images/explore-commission/padoru.png" alt="Padoru">
+        </div>
+        <div class="style-info">
+          <h4>Padoru</h4>
+          <div class="style-price">200 PHP / 15 USD</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Commission Request Form -->
+  <section id="commissionFormSection">
+    <p class="sec-label">Commission Details</p>
+    <div class="form-card">
+
+      <!-- Name + Email -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name <span class="req">*</span></label>
+          <input class="form-input" type="text" id="f-name" placeholder="e.g. Yumi the Fleur" required/>
+        </div>
+        <div class="form-group">
+          <label>Email Address <span class="req">*</span></label>
+          <input class="form-input" type="email" id="f-email" placeholder="yourname@email.com" required/>
+        </div>
+      </div>
+
+      <!-- Character Name -->
+      <div class="form-group">
+        <label>Character Name <span class="req">*</span></label>
+        <input class="form-input" type="text" id="f-charname" placeholder="e.g. Yumi, OC # 3, unnamed" required/>
+      </div>
+
+      <!-- Character Gender -->
+      <div class="form-group">
+        <label>Character Gender <span class="opt">(optional)</span></label>
+        <div class="toggle-group" id="genderGroup">
+          <div class="toggle-btn" onclick="toggleGender(this)"><span class="gender-icon">♀</span> Female</div>
+          <div class="toggle-btn" onclick="toggleGender(this)"><span class="gender-icon">♂</span> Male</div>
+          <div class="toggle-btn" onclick="toggleGender(this)">Other</div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label>Description <span class="req">*</span></label>
+        <textarea class="form-textarea" id="f-desc"
+              minlength="20"
+              maxlength="800"
+              placeholder="Describe their appearance: hair color/length, eye color, skin tone, outfit, poses, notable features like scars or accessories, personality vibe, etc."
+              oninput="updateCharCount(this)">
+            </textarea>
+        <p class="char-count" id="descCount">0 / 800</p>
+        <p class="field-error" id="descError" style="display:none; color:#e05a8a; font-size:15px; margin-top:2px;">Description must be at least 20 characters.</p>
+      </div>
+
+      <!-- Pose / Expression -->
+      <div class="form-group">
+        <label>Pose / Expression <span class="opt">(optional)</span></label>
+        <div class="toggle-group" id="poseGroup">
+          <div class="toggle-btn" onclick="togglePose(this)">Artist choice</div>
+          <div class="toggle-btn" onclick="togglePose(this)">Standing</div>
+          <div class="toggle-btn" onclick="togglePose(this)">Sitting</div>
+          <div class="toggle-btn" onclick="togglePose(this)">Custom</div>
+        </div>
+      </div>
+
+      <!-- Background Preference -->
+      <div class="form-group">
+        <label>Background Preference <span class="opt">(optional)</span></label>
+        <select class="form-select" id="f-bg">
+          <option value="">--Select Background--</option>
+          <option value="none">None / Transparent</option>
+          <option value="simple">Simple Color</option>
+          <option value="gradient">Gradient</option>
+          <option value="basic">Basic Scene</option>
+          <option value="detailed">Detailed Background (+fee)</option>
+          <option value="custom">Custom (describe in details)</option>
+        </select>
+      </div>
+
+      <!-- Color Palette -->
+      <div class="form-group">
+        <label>Color Palette <span class="opt">(optional)</span></label>
+        <div class="palette-group" id="paletteGroup">
+          <div class="palette-dot" style="background:#FFADC7;" onclick="togglePalette(this)" title="Pink"></div>
+          <div class="palette-dot" style="background:#BF82FF;" onclick="togglePalette(this)" title="Purple"></div>
+          <div class="palette-dot" style="background:#82C8FF;" onclick="togglePalette(this)" title="Blue"></div>
+          <div class="palette-dot" style="background:#82FFBA;" onclick="togglePalette(this)" title="Mint"></div>
+          <div class="palette-dot" style="background:#FFE082;" onclick="togglePalette(this)" title="Yellow"></div>
+          <div class="palette-dot" style="background:#FF9A6C;" onclick="togglePalette(this)" title="Peach"></div>
+          <div class="palette-dot" style="background:#3A5AFF;" onclick="togglePalette(this)" title="Indigo"></div>
+          <div class="palette-dot" style="background:#3A1A5A;" onclick="togglePalette(this)" title="Dark Purple"></div>
+        </div>
+      </div>
+
+      <hr class="form-divider">
+
+      <!-- Upload References -->
+      <div class="form-group">
+        <p class="sec-label">Upload References</p>
+        <p class="upload-note">Images of your character — existing art, photo refs, or design sheets. The more visual info, the better the result!</p>
+      </div>
+
+      <div class="form-group">
+        <label>Character Reference Images <span class="req">*</span></label>
+        <div class="upload-zone" onclick="document.getElementById('f-refs').click()"
+             ondragover="event.preventDefault(); this.style.borderColor='var(--main-purple)'"
+             ondragleave="this.style.borderColor=''"
+             ondrop="handleDrop(event)">
+          <p>Click to upload or drag &amp; drop</p>
+          <span>PNG, JPG, WEBP up to 10MB each • Max 5 files</span>
+          <div id="uploadedFiles" style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; justify-content:center;"></div>
+        </div>
+        <input
+          type="file"
+          id="f-refs"
+          name="references[]"
+          accept="image/*"
+          multiple
+          style="display:none"
+          onchange="previewFiles(this.files)"
+        >
+      </div>
+
+      <div class="form-submit-row">
+        <button type="button" class="btn-submit" onclick="handleSubmit()">Submit</button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h2>Yumi the Fleur</h2>
+        <p>Custom digital art commissions — chibi, headshots, body shots, chibi eye banners, etc. Bringing your characters to life with love and creativity.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="commission.html">Commission</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ MODAL ══ -->
+<div class="modal-overlay" id="authModal" onclick="handleOverlay(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-tabs">
+      <div class="m-tab active" id="mtab-login"  onclick="switchTab('login')">Log In</div>
+      <div class="m-tab"        id="mtab-signup" onclick="switchTab('signup')">Sign Up</div>
+    </div>
+    <div class="fpanel active" id="fp-login">
+      <div class="auth-error" id="loginError"></div>
+      <form id="loginForm">
+        <div class="fg">
+          <label>Username</label>
+          <input type="text" name="username" required/>
+        </div>
+        <div class="fg">
+          <label>Password</label>
+          <input type="password" name="password" required/>
+        </div>
+        <button type="submit" class="btn btn-modal">Log In</button>
+      </form>
+      <p class="m-switch">Don't have an account? <a onclick="switchTab('signup')">Sign up</a></p>
+    </div>
+    <div class="fpanel" id="fp-signup">
+      <div class="auth-error" id="signupError"></div>
+      <form id="signupForm">
+        <div class="fg">
+          <label>Username</label>
+          <input type="text" name="username" required/>
+        </div>
+        <div class="fg">
+          <label>Email</label>
+          <input type="email" name="email" required/>
+        </div>
+        <div class="fg">
+          <label>Password</label>
+          <input type="password" name="password" required/>
+        </div>
+        <div class="fg">
+          <label>Confirm Password</label>
+          <input type="password" name="confirm" required/>
+        </div>
+        <button type="submit" class="btn btn-modal">Create Account</button>
+      </form>
+      <p class="m-switch">Already have an account? <a onclick="switchTab('login')">Log in</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SUCCESS OVERLAY ══ -->
+<div class="modal-overlay" id="successOverlay" onclick="handleSuccessOverlay(event)">
+  <div class="modal" style="text-align:center; padding: 48px 40px; max-width: 520px;">
+    <div style="font-size: 52px; margin-bottom: 16px;">🌸</div>
+    <h2 style="font-family: var(--font-display); font-size: 28px; color: var(--deep-purple); margin-bottom: 12px;">
+      Commission Received!
+    </h2>
+    <p style="font-size: 18px; color: var(--text-muted); line-height: 1.7; margin-bottom: 28px;">
+      Thank you for your request! Yumi will review your details and get back to you via email within 1&ndash;2 business days.
+    </p>
+    <button type="button" class="btn-submit" onclick="closeSuccessOverlay()">Done</button>
+  </div>
+</div>
+
+<script src="main.js"></script>
+
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/05/25/00/20260525001556-HTTZ46GH.js" defer></script>
+    
+
+
+</body>
+</html>

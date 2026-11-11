@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Yumi the Fleur</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="png" href="Images/logo/Transparent.png">
+
+</head>
+
+<body class="page-bg">
+
+<!-- ════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════ -->
+<nav class="navbar">
+
+  <div class="container inner">
+
+    <a href="index.html" class="nav-logo">
+      <img src="Images/logo/Transparent.png" alt="Yumi">
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="commission.html">Commission</a></li>
+    </ul>
+
+    <!-- DESKTOP AUTH -->
+    <div class="nav-auth" id="navAuth">
+
+      <!-- Logged out -->
+      <div id="guestNav">
+
+        <button class="btn-nav-login"
+                onclick="openModal('login')">
+          Log in
+        </button>
+
+        <button class="btn-nav-signup"
+                onclick="openModal('signup')">
+          Sign up
+        </button>
+
+      </div>
+
+      <!-- Logged in -->
+      <div id="userNav"
+           style="display:none; align-items:center; gap:12px;">
+
+        <span id="navUsername"></span>
+
+        <button class="btn-nav-login"
+                onclick="logout()">
+          Logout
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- HAMBURGER -->
+    <button class="nav-hamburger"
+            id="hamburger"
+            aria-label="Toggle menu">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+
+  <!-- MOBILE DRAWER -->
+  <div class="nav-mobile-drawer"
+       id="mobileDrawer">
+
+    <a href="index.html"
+       onclick="closeMobileNav()">
+      Home
+    </a>
+
+    <a href="gallery.html"
+       onclick="closeMobileNav()">
+      Gallery
+    </a>
+
+    <a href="about.html"
+       onclick="closeMobileNav()">
+      About
+    </a>
+
+    <a href="contact.html"
+       onclick="closeMobileNav()">
+      Contact
+    </a>
+
+    <a href="commission.html"
+       onclick="closeMobileNav()">
+      Commission
+    </a>
+
+    <!-- MOBILE AUTH -->
+    <div class="nav-auth-mobile"
+         id="navAuthMobile">
+
+      <button class="btn-nav-login"
+              onclick="openModal('login')">
+        Log in
+      </button>
+
+      <button class="btn-nav-signup"
+              onclick="openModal('signup')">
+        Sign up
+      </button>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- ════════════════════════════════════════
+     PAGE HERO
+════════════════════════════════════════ -->
+<div class="container">
+
+  <section class="page-hero">
+
+    <div class="page-hero-stars"
+         id="heroStars"></div>
+
+    <div class="page-hero-body">
+
+      <h1>About Me</h1>
+
+      <p>
+        Get to know the artist behind the illustrations,
+        creativity, and colorful designs.
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- ════════════════════════════════════════
+     ABOUT CONTENT
+════════════════════════════════════════ -->
+<div class="about-wrap">
+
+  <!-- ARTIST NAME -->
+  <p class="about-label">
+    Yumi the Fleur
+  </p>
+
+  <!-- BIO -->
+  <div class="bio-card">
+
+    <p>
+      Welcome! I'm Yumi, a digital artist who creates
+      cute and colorful artworks ranging from chibi
+      characters, anime illustrations, icons, banners,
+      and detailed custom art.
+    </p>
+
+    <p>
+      Whether you want fan art, original characters,
+      couple art, or personalized illustrations,
+      I'd love to bring your ideas to life through
+      creativity and passion.
+    </p>
+
+    <p>
+      Thank you for visiting my portfolio and
+      supporting my work.
+    </p>
+
+  </div>
+
+  <!-- I CAN DRAW -->
+  <div class="can-draw-card">
+
+    <h3>I Can Draw 🌸</h3>
+
+    <ul class="can-draw-list">
+
+      <li>Female characters</li>
+      <li>Slight mecha designs</li>
+      <li>Humans and portraits</li>
+      <li>Digital posters and banners</li>
+      <li>Couples / ship art</li>
+      <li>Furry characters</li>
+      <li>Fan arts</li>
+      <li>Original characters (OCs)</li>
+      <li>Slightly NSFW content</li>
+
+    </ul>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-card">
+
+    <h2>
+      Ready to work<br>
+      together?
+    </h2>
+
+    <div class="cta-btns">
+
+      <button class="btn-outline-purple"
+              onclick="window.location.href='commission.html'">
+
+        Commission Now
+
+      </button>
+
+      <button class="btn"
+              onclick="window.location.href='index.html#commission'">
+
+        Explore Styles
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+
+        <h2>Yumi the Fleur</h2>
+
+        <p>
+          Custom digital art commissions —
+          bringing your characters to life.
+        </p>
+
+      </div>
+
+      <nav class="footer-nav">
+
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="commission.html">Commission</a>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ════════════════════════════════════════
+     AUTH MODAL
+════════════════════════════════════════ -->
+<div class="modal-overlay"
+     id="authModal"
+     onclick="handleOverlay(event)">
+
+  <div class="modal">
+
+    <button class="modal-close"
+            onclick="closeModal()">
+
+      &times;
+
+    </button>
+
+    <!-- TABS -->
+    <div class="modal-tabs">
+
+      <div class="m-tab active"
+           id="mtab-login"
+           onclick="switchTab('login')">
+
+        Log In
+
+      </div>
+
+      <div class="m-tab"
+           id="mtab-signup"
+           onclick="switchTab('signup')">
+
+        Sign Up
+
+      </div>
+
+    </div>
+
+    <!-- LOGIN -->
+    <div class="fpanel active"
+         id="fp-login">
+
+      <div class="auth-error"
+           id="loginError"></div>
+
+      <form id="loginForm">
+
+        <div class="fg">
+
+          <label>Username</label>
+
+          <input type="text"
+                 name="username"
+                 required>
+
+        </div>
+
+        <div class="fg">
+
+          <label>Password</label>
+
+          <input type="password"
+                 name="password"
+                 required>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-modal">
+
+          Log In
+
+        </button>
+
+      </form>
+
+    </div>
+
+    <!-- SIGNUP -->
+    <div class="fpanel"
+         id="fp-signup">
+
+      <div class="auth-error"
+           id="signupError"></div>
+
+      <form id="signupForm">
+
+        <div class="fg">
+
+          <label>Username</label>
+
+          <input type="text"
+                 name="username"
+                 required>
+
+        </div>
+
+        <div class="fg">
+
+          <label>Email</label>
+
+          <input type="email"
+                 name="email"
+                 required>
+
+        </div>
+
+        <div class="fg">
+
+          <label>Password</label>
+
+          <input type="password"
+                 name="password"
+                 required>
+
+        </div>
+
+        <div class="fg">
+
+          <label>Confirm Password</label>
+
+          <input type="password"
+                 name="confirm"
+                 required>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-modal">
+
+          Create Account
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="main.js"></script>
+
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/05/25/00/20260525001556-HTTZ46GH.js" defer></script>
+    
+
+</body>
+</html>

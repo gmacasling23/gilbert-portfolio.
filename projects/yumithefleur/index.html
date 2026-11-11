@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home — Yumi the Fleur</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="png" href="Images/logo/Transparent.png">
+</head>
+<body class="page-bg">
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <div class="container inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="Images/logo/Transparent.png" alt="Yumi">
+    </a>
+
+    <!-- Desktop Links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="commission.html">Commission</a></li>
+    </ul>
+
+    <!-- Desktop Auth -->
+    <div class="nav-auth" id="navAuth">
+
+      <!-- Guest -->
+      <div id="guestNav">
+        <button class="btn-nav-login" onclick="openModal('login')">
+          Log in
+        </button>
+
+        <button class="btn-nav-signup" onclick="openModal('signup')">
+          Sign up
+        </button>
+      </div>
+
+      <!-- User -->
+      <div id="userNav" style="display:none;">
+        <span class="nav-user" id="navUsername"></span>
+
+        <button class="btn-nav-login" onclick="logoutUser()">
+          Logout
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button class="mobile-toggle" onclick="toggleMobileNav()">
+      ☰
+    </button>
+
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-mobile-drawer" id="mobileDrawer">
+
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="gallery.html" onclick="closeMobileNav()">Gallery</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    <a href="commission.html" onclick="closeMobileNav()">Commission</a>
+
+    <!-- Mobile Auth -->
+    <div class="nav-auth-mobile">
+
+      <!-- Guest -->
+      <div id="guestNavMobile">
+        <button class="btn-nav-login" onclick="openModal('login')">
+          Log in
+        </button>
+
+        <button class="btn-nav-signup" onclick="openModal('signup')">
+          Sign up
+        </button>
+      </div>
+
+      <!-- User -->
+      <div id="userNavMobile" style="display:none;">
+        <p id="mobileUsername"></p>
+
+        <button class="btn-nav-login" onclick="logoutUser()">
+          Logout
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="container">
+  <section class="hero" id="home">
+
+    <div class="hero-stars" id="heroStars"></div>
+
+    <div class="hero-body">
+      <span class="hero-badge">✦ Open for Commission</span>
+      <h1>Yumi the Fleur</h1>
+      <p class="hero-sub">Custom digital art — chibi, headshots, body shots &amp; more ✦ ･*+</p>
+      <div class="hero-ctas">
+        <button class="btn"          onclick="document.getElementById('commission').scrollIntoView({behavior:'smooth'})">Explore Styles</button>
+        <button class="btn btn-outline" onclick="document.getElementById('how-to').scrollIntoView({behavior:'smooth'})">How It Works</button>
+      </div>
+    </div>
+
+    <div class="hero-char">
+      <img src="Images/hero-banner/hero-character.png" alt="Yumi character art">
+    </div>
+
+  </section>
+</div>
+
+<!-- ══ MID SECTION — Artwork | Dashboard | ToS ══ -->
+<div class="container">
+  <div class="mid-grid">
+
+    <!-- Artwork Preview -->
+    <aside class="artwork-col">
+      <p class="sec-label">Artwork</p>
+      <div class="art-grid">
+        <div class="art-thumb"><img src="Images/artwork-index/art1.png" alt="artwork"></div>
+        <div class="art-thumb"><img src="Images/artwork-index/art2.png" alt="artwork"></div>
+        <div class="art-thumb"><img src="Images/artwork-index/art3.png" alt="artwork"></div>
+        <div class="art-thumb"><img src="Images/artwork-index/art4.png" alt="artwork"></div>
+        <div class="art-thumb"><img src="Images/artwork-index/art5.png" alt="artwork"></div>
+        <div class="art-thumb"><img src="Images/artwork-index/art6.png" alt="artwork"></div>
+      </div>
+      <button class="btn-view-more" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">View More</button>
+    </aside>
+
+    <!-- My Dashboard -->
+    <section class="dashboard-col">
+      <p class="sec-label">My Dashboard</p>
+
+      <!-- GUEST VIEW -->
+      <div id="guestDashboard" class="dash-welcome">
+        <div class="dash-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <h3>Welcome, Guest!</h3>
+        <p>Log in or create a free account to track your commissions, message the artist, and manage your orders all in one place.</p>
+        <div class="dash-btns">
+          <button class="dash-btn-login"  onclick="openModal('login')">Log in</button>
+          <button class="dash-btn-signup" onclick="openModal('signup')">Create account</button>
+        </div>
+        <div class="dash-locked">
+          <div class="dash-lock-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <span>Sign in to view your orders</span>
+        </div>
+      </div>
+
+      <!-- USER VIEW -->
+      <div id="userDashboard" style="display:none;">
+        <div class="dash-welcome">
+          <div class="dash-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h3>Welcome, <span id="welcomeText"></span>!</h3>
+        </div>
+
+        <div class="dash-stats">
+          <div class="dash-stat">
+            <span class="stat-count" id="activeCount">—</span>
+            <span class="stat-label">Active Orders</span>
+          </div>
+          <div class="dash-stat">
+            <span class="stat-count" id="completedCount">—</span>
+            <span class="stat-label">Completed</span>
+          </div>
+          <div class="dash-stat">
+            <span class="stat-count" id="pendingCount">—</span>
+            <span class="stat-label">Pending</span>
+          </div>
+        </div>
+
+        <div id="ordersText">
+          <div class="orders-empty">Loading orders…</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terms of Service -->
+    <section class="tos-section">
+      <p class="sec-label">Terms of Service</p>
+
+      <div class="tos-card">
+        <div class="tos-item">
+          <h4>Turn over</h4>
+          <p>5–10 business days depending on complexity and queue.</p>
+        </div>
+      </div>
+
+      <div class="tos-card">
+        <div class="tos-item">
+          <h4>Payment</h4>
+          <p>GCash, Paypal, PayMaya, Vgen &amp; Load (Smart) accepted. Whole Payment after the sketch is approved.</p>
+        </div>
+      </div>
+
+      <div class="tos-card">
+        <div class="tos-item">
+          <h4>Usage Rights</h4>
+          <p>Commercial use is 2&times; of the total price.</p>
+        </div>
+      </div>
+
+      <div class="tos-card">
+        <div class="tos-item">
+          <h4>Revision</h4>
+          <p>Free revisions are included during the work-in-progress stage. Revisions requested after the artwork is finished will require an additional fee of 10% of the total price.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- ══ HOW TO COMMISSION ══ -->
+<div class="container">
+  <section class="how-section" id="how-to">
+    <p class="sec-label">How to Commission</p>
+    <div class="steps-row">
+
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Choose a Style</h4>
+        <p>Browse our commission types — Chibi, Headshot, Body Shot, or Eye Banner.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Fill the Form</h4>
+        <p>Complete the commission request form with character details and references.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Down payment</h4>
+        <p>Send payment once the quote is confirmed to secure your slot.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h4>Receive Art</h4>
+        <p>Get your custom artwork delivered within the agreed timeframe. Enjoy!</p>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ══ WHAT CLIENTS SAY ══ -->
+<div class="container">
+  <section class="testimonials-section">
+    <p class="sec-label">What Clients Say</p>
+    <div class="testi-row">
+
+      <div class="testi-card">
+        <div class="testi-av">K</div>
+        <div class="testi-body">
+          <h5>Kai Mikasa</h5>
+          <p>Super recommended!! The chibi art was exactly what I imagined. Will commission again! 💕</p>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-av testi-av--pink">A</div>
+        <div class="testi-body">
+          <h5>Ami Sato</h5>
+          <p>Amazing quality and so fast! Yumi captured my OC perfectly. Totally worth it.</p>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-av testi-av--softpink">R</div>
+        <div class="testi-body">
+          <h5>Ren Hayashi</h5>
+          <p>The body shot commission blew me away. The shading is insane! 10/10 would recommend ✨</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ══ EXPLORE COMMISSION ══ -->
+<div class="container">
+  <section class="commission-section" id="commission">
+    <p class="sec-label">Explore Commission</p>
+
+    <div class="comm-grid">
+
+      <div class="comm-col">
+        <div class="comm-card">
+          <div class="comm-img"><img src="Images/explore-commission/chibi.png" alt="Chibi"></div>
+          <div class="comm-body">
+            <h4>Chibi</h4>
+          <p class="desc">Cute chibi-style character illustrations available as YCH (Your Character Here) or with custom anatomy and poses.</p>
+          </div>
+        </div>
+        <div class="comm-price">
+          <div class="price-lbl">Price</div>
+          <div class="price-val">YCH — 80 PHP or 8 USD<br>With anatomy — 100 PHP or 10 USD
+        </div>
+      </div>
+      </div>
+
+      <div class="comm-col">
+        <div class="comm-card">
+          <div class="comm-img"><img src="Images/explore-commission/whole-body-detailed-anime-chibi.png" alt="Whole Body Detailed Anime Chibi"></div>
+          <div class="comm-body">
+            <h4>Whole Body Detailed Anime Chibi</h4>
+          <p class="desc">A fully rendered anime-style chibi with detailed coloring, shading, and full body composition.</p>
+          </div>
+        </div>
+        <div class="comm-price">
+          <div class="price-lbl">Price</div>
+          <div class="price-val">With anatomy — 400 PHP or 35 USD<br>Without anatomy — 300 PHP or 20 USD
+        </div>
+      </div>
+      </div>
+
+      <div class="comm-col">
+        <div class="comm-card">
+          <div class="comm-img"><img src="Images/explore-commission/icon-chibi.jpg" alt="Icon Chibi"></div>
+          <div class="comm-body">
+            <h4>Icon Chibi</h4>
+          <p class="desc">Simple and adorable chibi icons perfect for profile pictures or social media use.</p>
+          </div>
+        </div>
+        <div class="comm-price">
+          <div class="price-lbl">Price</div>
+          <div class="price-val">50 PHP or 5 USD
+        </div>
+      </div>
+      </div>
+
+      <div class="comm-col">
+        <div class="comm-card">
+          <div class="comm-img"><img src="Images/explore-commission/chibi-with-additional-details.png" alt="Chibi with Additional Details & Characters"></div>
+          <div class="comm-body">
+            <h4>Chibi with Additional Details &amp; Characters</h4>
+          <p class="desc">A more detailed chibi artwork with extra decorations, props, effects, or additional characters.</p>
+          </div>
+        </div>
+        <div class="comm-price">
+          <div class="price-lbl">Price</div>
+          <div class="price-val">50 PHP or 30 USD (can add anything as long as one main character)
+        </div>
+      </div>
+      </div>
+
+      <div class="comm-col">
+        <div class="comm-card">
+          <div class="comm-img"><img src="Images/explore-commission/anime.png" alt="Anime"></div>
+          <div class="comm-body">
+            <h4>Anime</h4>
+          <p class="desc">Regular anime-style illustrations available in headshot, bust, half body, or full body formats.</p>
+          </div>
+        </div>
+        <div class="comm-price">
+          <div class="price-lbl">Price</div>
+          <div class="price-val">Headshot — 200 PHP or 10 USD<br>Bust — 300 PHP or 15 USD<br>Half body — 350 PHP or 18 USD<br>Whole body — 400 PHP or 20 USD
+        </div>
+      </div>
+      </div>
+
+      <div class="comm-col">
+        <div class="comm-card">
+          <div class="comm-img"><img src="Images/explore-commission/background.png" alt="Detailed Background"></div>
+          <div class="comm-body">
+            <h4>Detailed Background</h4>
+          <p class="desc">Custom scenic or decorative backgrounds with extra detail to enhance your artwork.</p>
+          </div>
+        </div>
+        <div class="comm-price">
+          <div class="price-lbl">Price</div>
+          <div class="price-val">500–2000 PHP or 30–50 USD
+        </div>
+      </div>
+      </div>
+
+      <div class="comm-col">
+        <div class="comm-card">
+          <div class="comm-img"><img src="Images/explore-commission/eye-banner.png" alt="Chibi Eye Banner"></div>
+          <div class="comm-body">
+            <h4>Chibi Eye Banner</h4>
+          <p class="desc">Stylized eye artwork in chibi style, great for profile banners or aesthetic headers.</p>
+          </div>
+        </div>
+        <div class="comm-price">
+          <div class="price-lbl">Price</div>
+          <div class="price-val">50 PHP or 5 USD
+        </div>
+      </div>
+      </div>
+
+      <div class="comm-col">
+        <div class="comm-card">
+          <div class="comm-img"><img src="Images/explore-commission/chibi-2nd-style.png" alt="Chibi 2nd Style"></div>
+          <div class="comm-body">
+            <h4>Chibi (2nd Style)</h4>
+          <p class="desc">A different chibi art style with softer proportions and expressive features.</p>
+          </div>
+        </div>
+        <div class="comm-price">
+          <div class="price-lbl">Price</div>
+          <div class="price-val">Headshot — 50 PHP or 5 USD<br>Bust-up — 80 PHP or 8 USD
+        </div>
+      </div>
+      </div>
+
+      <div class="comm-col">
+        <div class="comm-card">
+          <div class="comm-img"><img src="Images/explore-commission/bowls-chibi-ych.png" alt="Bowls Chibi YCH"></div>
+          <div class="comm-body">
+            <h4>Bowls Chibi YCH</h4>
+          <p class="desc">Cute themed "bowl chibi" illustrations where your character is drawn in a fun preset concept.</p>
+          </div>
+        </div>
+        <div class="comm-price">
+          <div class="price-lbl">Price</div>
+          <div class="price-val">80 PHP or 8 USD
+        </div>
+      </div>
+      </div>
+
+      <div class="comm-col">
+        <div class="comm-card">
+          <div class="comm-img"><img src="Images/explore-commission/padoru.png" alt="Padoru"></div>
+          <div class="comm-body">
+            <h4>Padoru</h4>
+          <p class="desc">Festive and playful Padoru-style character art inspired by the popular chibi meme style.</p>
+          </div>
+        </div>
+        <div class="comm-price">
+          <div class="price-lbl">Price</div>
+          <div class="price-val">200 PHP or 15 USD
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+    <div class="comm-cta">
+      <button class="btn-commission-now" onclick="window.location.href='commission.html'">Commission Now</button>
+    </div>
+
+  </section>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <h2>Yumi the Fleur</h2>
+        <p>Custom digital art commissions — chibi, headshots, body shots, chibi eye banners, etc. Bringing your characters to life with love and creativity.</p>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="commission.html">Commission</a>
+      </nav>
+
+    </div>
+  </div>
+</footer>
+
+<!-- ══ LOGIN / SIGN UP MODAL ══ -->
+<div class="modal-overlay" id="authModal" onclick="handleOverlay(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-tabs">
+      <div class="m-tab active" id="mtab-login"  onclick="switchTab('login')">Log In</div>
+      <div class="m-tab"        id="mtab-signup" onclick="switchTab('signup')">Sign Up</div>
+    </div>
+    <div class="fpanel active" id="fp-login">
+      <div class="auth-error" id="loginError"></div>
+      <form id="loginForm">
+        <div class="fg">
+          <label>Username</label>
+          <input type="text" name="username" required/>
+        </div>
+        <div class="fg">
+          <label>Password</label>
+          <input type="password" name="password" required/>
+        </div>
+        <button type="submit" class="btn btn-modal">Log In</button>
+      </form>
+      <p class="m-switch">Don't have an account? <a onclick="switchTab('signup')">Sign up</a></p>
+    </div>
+    <div class="fpanel" id="fp-signup">
+      <div class="auth-error" id="signupError"></div>
+      <form id="signupForm">
+        <div class="fg">
+          <label>Username</label>
+          <input type="text" name="username" required/>
+        </div>
+        <div class="fg">
+          <label>Email</label>
+          <input type="email" name="email" required/>
+        </div>
+        <div class="fg">
+          <label>Password</label>
+          <input type="password" name="password" required/>
+        </div>
+        <div class="fg">
+          <label>Confirm Password</label>
+          <input type="password" name="confirm" required/>
+        </div>
+        <button type="submit" class="btn btn-modal">Create Account</button>
+      </form>
+      <p class="m-switch">Already have an account? <a onclick="switchTab('login')">Log in</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery — Yumi the Fleur</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="png" href="Images/logo/Transparent.png">
+
+</head>
+
+<body class="page-bg">
+
+<!-- ════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════ -->
+<nav class="navbar">
+
+  <div class="container inner">
+
+    <a href="index.html" class="nav-logo">
+      <img src="Images/logo/Transparent.png" alt="Yumi">
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="commission.html">Commission</a></li>
+    </ul>
+
+    <!-- DESKTOP AUTH -->
+    <div class="nav-auth" id="navAuth">
+
+      <!-- Logged out -->
+      <div id="guestNav">
+
+        <button class="btn-nav-login"
+                onclick="openModal('login')">
+          Log in
+        </button>
+
+        <button class="btn-nav-signup"
+                onclick="openModal('signup')">
+          Sign up
+        </button>
+
+      </div>
+
+      <!-- Logged in -->
+      <div id="userNav"
+           style="display:none; align-items:center; gap:12px;">
+
+        <span id="navUsername"></span>
+
+        <button class="btn-nav-login"
+                onclick="logout()">
+          Logout
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- HAMBURGER -->
+    <button class="nav-hamburger"
+            id="hamburger"
+            aria-label="Toggle menu">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+
+  <!-- MOBILE DRAWER -->
+  <div class="nav-mobile-drawer"
+       id="mobileDrawer">
+
+    <a href="index.html"
+       onclick="closeMobileNav()">
+      Home
+    </a>
+
+    <a href="gallery.html"
+       onclick="closeMobileNav()">
+      Gallery
+    </a>
+
+    <a href="about.html"
+       onclick="closeMobileNav()">
+      About
+    </a>
+
+    <a href="contact.html"
+       onclick="closeMobileNav()">
+      Contact
+    </a>
+
+    <a href="commission.html"
+       onclick="closeMobileNav()">
+      Commission
+    </a>
+
+    <!-- MOBILE AUTH -->
+    <div class="nav-auth-mobile"
+         id="navAuthMobile">
+
+      <button class="btn-nav-login"
+              onclick="openModal('login')">
+        Log in
+      </button>
+
+      <button class="btn-nav-signup"
+              onclick="openModal('signup')">
+        Sign up
+      </button>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- ════════════════════════════════════════
+     PAGE HERO
+════════════════════════════════════════ -->
+<div class="container">
+
+  <section class="page-hero">
+
+    <div class="page-hero-stars"
+         id="heroStars"></div>
+
+    <div class="page-hero-body">
+
+      <h1>Art Folio</h1>
+
+      <p>
+        Showcasing featured projects and creative works
+        developed over the years — highlighting passion,
+        creativity, and artistic growth.
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- ════════════════════════════════════════
+     GALLERY CONTENT
+════════════════════════════════════════ -->
+<div class="container">
+
+  <div class="gallery-wrap">
+
+    <!-- DEMOREEL -->
+    <section class="demoreel-section">
+
+      <h2 class="gallery-section-title">
+        Demoreel (2026)
+      </h2>
+
+      <div class="demoreel-frame">
+
+        <iframe
+          src="https://www.youtube.com/embed/7Ce0_5oshKU"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+    </section>
+
+    <!-- 2022 -->
+    <section class="year-section">
+
+      <h2 class="gallery-section-title">
+        Art works (2022)
+      </h2>
+
+      <div class="year-grid">
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2022/art1.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2022/art2.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2022/art3.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2022/art4.png" alt="Artwork">
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 2023 -->
+    <section class="year-section">
+
+      <h2 class="gallery-section-title">
+        Art works (2023)
+      </h2>
+
+      <div class="year-grid">
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2023/art1.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2023/art2.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2023/art3.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2023/art4.png" alt="Artwork">
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 2024 -->
+    <section class="year-section">
+
+      <h2 class="gallery-section-title">
+        Art works (2024)
+      </h2>
+
+      <div class="year-grid">
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2024/art1.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2024/art2.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2024/art3.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2024/art4.png" alt="Artwork">
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 2025 -->
+    <section class="year-section">
+
+      <h2 class="gallery-section-title">
+        Art works (2025)
+      </h2>
+
+      <div class="year-grid">
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2025/art1.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2025/art2.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2025/art3.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2025/art4.png" alt="Artwork">
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 2026 -->
+    <section class="year-section">
+
+      <h2 class="gallery-section-title">
+        Art works (2026)
+      </h2>
+
+      <div class="year-grid">
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2026/art1.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2026/art2.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2026/art3.png" alt="Artwork">
+        </div>
+
+        <div class="gallery-thumb"
+             onclick="openLightbox(this)">
+          <img src="Images/gallery/2026/art4.png" alt="Artwork">
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+    <div class="gallery-cta">
+
+      <button class="btn-contact-more"
+              onclick="window.location.href='contact.html'">
+
+        Contact me for more
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+
+        <h2>Yumi the Fleur</h2>
+
+        <p>
+          Custom digital art commissions —
+          bringing your characters to life.
+        </p>
+
+      </div>
+
+      <nav class="footer-nav">
+
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="commission.html">Commission</a>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ════════════════════════════════════════
+     LIGHTBOX
+════════════════════════════════════════ -->
+<div class="lightbox-overlay"
+     id="lightbox"
+     onclick="handleLightboxOverlay(event)">
+
+  <div class="lightbox-inner">
+
+    <button class="lightbox-close"
+            onclick="closeLightbox()">
+
+      &times;
+
+    </button>
+
+    <img id="lightbox-img"
+         src=""
+         alt="Artwork preview">
+
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════════
+     AUTH MODAL
+════════════════════════════════════════ -->
+<div class="modal-overlay"
+     id="authModal"
+     onclick="handleOverlay(event)">
+
+  <div class="modal">
+
+    <button class="modal-close"
+            onclick="closeModal()">
+
+      &times;
+
+    </button>
+
+    <!-- TABS -->
+    <div class="modal-tabs">
+
+      <div class="m-tab active"
+           id="mtab-login"
+           onclick="switchTab('login')">
+
+        Log In
+
+      </div>
+
+      <div class="m-tab"
+           id="mtab-signup"
+           onclick="switchTab('signup')">
+
+        Sign Up
+
+      </div>
+
+    </div>
+
+    <!-- LOGIN -->
+    <div class="fpanel active"
+         id="fp-login">
+
+      <div class="auth-error"
+           id="loginError"></div>
+
+      <form id="loginForm">
+
+        <div class="fg">
+
+          <label>Username</label>
+
+          <input type="text"
+                 name="username"
+                 required>
+
+        </div>
+
+        <div class="fg">
+
+          <label>Password</label>
+
+          <input type="password"
+                 name="password"
+                 required>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-modal">
+
+          Log In
+
+        </button>
+
+      </form>
+
+    </div>
+
+    <!-- SIGNUP -->
+    <div class="fpanel"
+         id="fp-signup">
+
+      <div class="auth-error"
+           id="signupError"></div>
+
+      <form id="signupForm">
+
+        <div class="fg">
+
+          <label>Username</label>
+
+          <input type="text"
+                 name="username"
+                 required>
+
+        </div>
+
+        <div class="fg">
+
+          <label>Email</label>
+
+          <input type="email"
+                 name="email"
+                 required>
+
+        </div>
+
+        <div class="fg">
+
+          <label>Password</label>
+
+          <input type="password"
+                 name="password"
+                 required>
+
+        </div>
+
+        <div class="fg">
+
+          <label>Confirm Password</label>
+
+          <input type="password"
+                 name="confirm"
+                 required>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-modal">
+
+          Create Account
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="main.js"></script>
+
+<script>
+
+/* ════════════════════════════════════════
+   LIGHTBOX
+════════════════════════════════════════ */
+
+function openLightbox(element){
+
+  const img =
+    element.querySelector("img");
+
+  const lightbox =
+    document.getElementById("lightbox");
+
+  const lightboxImg =
+    document.getElementById("lightbox-img");
+
+  lightboxImg.src = img.src;
+
+  lightbox.classList.add("open");
+
+}
+
+function closeLightbox(){
+
+  document
+    .getElementById("lightbox")
+    .classList.remove("open");
+
+}
+
+function handleLightboxOverlay(e){
+
+  if(
+    e.target ===
+    document.getElementById("lightbox")
+  ){
+    closeLightbox();
+  }
+
+}
+
+</script>
+
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/05/25/00/20260525001556-HTTZ46GH.js" defer></script>
+    
+</body>
+</html>

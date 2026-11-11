@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0"/>
+
+  <title>Contact — Yumi the Fleur</title>
+
+  <link rel="stylesheet"
+        href="style.css"/>
+
+  <link rel="icon"
+        type="png"
+        href="Images/logo/Transparent.png">
+
+  <style>
+
+    .by-logo-link{
+      display:inline-flex;
+      text-decoration:none;
+      border-radius:50%;
+      transition:opacity .2s, transform .2s;
+    }
+
+    .by-logo-link:hover{
+      opacity:.75;
+      transform:scale(1.08);
+    }
+
+  </style>
+
+</head>
+
+<body class="page-bg">
+
+<!-- ════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════ -->
+<nav class="navbar">
+
+  <div class="container inner">
+
+    <a href="index.html"
+       class="nav-logo">
+
+      <img src="Images/logo/Transparent.png"
+           alt="Yumi">
+
+    </a>
+
+    <ul class="nav-links">
+
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html"
+             class="active">Contact</a></li>
+      <li><a href="commission.html">Commission</a></li>
+
+
+    </ul>
+
+    <!-- DESKTOP AUTH -->
+    <div class="nav-auth" id="guestNav">
+      <button class="btn-nav-login" onclick="openModal('login')">Log in</button>
+      <button class="btn-nav-signup" onclick="openModal('signup')">Sign up</button>
+    </div>
+    <div class="nav-auth" id="userNav" style="display:none;">
+      <span id="navUsername"></span>
+      <button class="btn-nav-login" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- HAMBURGER -->
+    <button class="nav-hamburger"
+            id="hamburger"
+            aria-label="Toggle menu">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+
+  <!-- MOBILE DRAWER -->
+  <div class="nav-mobile-drawer"
+       id="mobileDrawer">
+
+    <a href="index.html"
+       onclick="closeMobileNav()">
+
+      Home
+
+    </a>
+
+    <a href="gallery.html"
+       onclick="closeMobileNav()">
+
+      Gallery
+
+    </a>
+
+    <a href="about.html"
+       onclick="closeMobileNav()">
+
+      About
+
+    </a>
+
+    <a href="contact.html"
+       onclick="closeMobileNav()">
+
+      Contact
+
+    </a>
+
+    <a href="commission.html"
+       onclick="closeMobileNav()">
+
+      Commission
+
+    </a>
+
+    <!-- MOBILE AUTH -->
+    <div class="nav-auth-mobile"
+         id="navAuthMobile">
+
+      <button class="btn-nav-login"
+              onclick="openModal('login')">
+
+        Log in
+
+      </button>
+
+      <button class="btn-nav-signup"
+              onclick="openModal('signup')">
+
+        Sign up
+
+      </button>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<div class="container">
+
+  <section class="page-hero">
+
+    <div class="page-hero-stars"
+         id="heroStars"></div>
+
+    <div class="page-hero-body">
+
+      <h1>Contact</h1>
+
+      <p>
+        Have a commission request or creative idea
+        in mind? Feel free to reach out for custom
+        digital art, illustrations, and personalized
+        designs.
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- ════════════════════════════════════════
+     CONTACT CONTENT
+════════════════════════════════════════ -->
+<div class="contact-wrap">
+
+  <!-- DASHBOARD -->
+  <div class="dash-welcome">
+
+    <div class="dash-icon">
+
+      <svg width="24"
+           height="24"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="currentColor"
+           stroke-width="1.8"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+
+      </svg>
+
+    </div>
+
+    <!-- GUEST -->
+    <div id="guestDashboard">
+
+      <h3>
+        Dashboard Unavailable
+      </h3>
+
+      <p>
+        Please log in from the homepage
+        to view your commission dashboard
+        and order information.
+      </p>
+
+    </div>
+
+    <!-- USER DASHBOARD -->
+    <div id="userDashboard"
+         style="display:none;">
+
+      <h3>
+        Welcome back,
+        <span id="dashboardUsername"></span> 
+      </h3>
+
+      <p>
+        Here’s your latest commission activity.
+      </p>
+
+      <!-- STATS -->
+      <div class="dashboard-stats">
+
+        <div class="dashboard-stat-card">
+
+          <h4>Total Orders</h4>
+
+          <span id="totalOrders">
+            0
+          </span>
+
+        </div>
+
+        <div class="dashboard-stat-card">
+
+          <h4>Pending</h4>
+
+          <span id="pendingOrders">
+            0
+          </span>
+
+        </div>
+
+        <div class="dashboard-stat-card">
+
+          <h4>Completed</h4>
+
+          <span id="completedOrders">
+            0
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- RECENT ORDERS -->
+      <div class="dashboard-orders">
+
+        <h4 class="dashboard-subtitle">
+          Recent Orders
+        </h4>
+
+        <div id="ordersList"
+             class="orders-list">
+
+          <p class="empty-orders">
+            No orders yet.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- ACTION -->
+      <div class="dash-btns">
+
+        <button class="dash-btn-login"
+                onclick="window.location.href='commission.html'">
+
+          New Commission
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SOCIAL MEDIA -->
+  <div class="social-card">
+
+    <h3>Social Media</h3>
+
+    <div class="social-grid">
+
+      <a class="social-link"
+         href="https://www.instagram.com/yumi_flr_o_o/"
+         target="_blank">
+
+        <img src="Images/social-media-logo/instagram-logo.png"
+             alt="Instagram">
+
+      </a>
+
+      <a class="social-link"
+         href="https://x.com/yumi_flr_o_o"
+         target="_blank">
+
+        <img src="Images/social-media-logo/x-logo.png"
+             alt="X">
+
+      </a>
+
+      <a class="social-link"
+         href="https://www.tiktok.com/@yumi_o_o"
+         target="_blank">
+
+        <img src="Images/social-media-logo/tiktok-logo.png"
+             alt="TikTok">
+
+      </a>
+
+      <a class="social-link"
+         href="https://vgen.co/Yumi_flr"
+         target="_blank">
+
+        <img src="Images/social-media-logo/vgen-logo.png"
+             alt="VGen">
+
+      </a>
+
+      <a class="social-link"
+         href="https://www.facebook.com/janenyyqtssq"
+         target="_blank">
+
+        <img src="Images/social-media-logo/facebook-logo.png"
+             alt="Facebook">
+
+      </a>
+
+      <a class="social-link"
+         href="mailto:yumifleurz@gmail.com">
+
+        <img src="Images/social-media-logo/gmail-logo.png"
+             alt="Gmail">
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- WEBSITE BY -->
+  <div class="website-by-card">
+
+    <h3>Website by</h3>
+
+    <div class="website-by-logos">
+
+      <a href="PORTFOLIO_LINESES/index.html"
+         target="_blank"
+         class="by-logo-link">
+
+        <div class="by-logo-ph">
+
+          <img src="Images/logo/reign-logo.png"
+               alt="Reign"
+               style="height:56px;">
+
+        </div>
+
+      </a>
+
+      <a href="PORTFOLIO_MACASLING/index.html"
+         target="_blank"
+         class="by-logo-link">
+
+        <div class="by-logo-circle">
+
+          <img src="Images/logo/gilbert-logo.png"
+               alt="GM"
+               style="width:56px;
+                      border-radius:50%;">
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+
+        <h2>Yumi the Fleur</h2>
+
+        <p>
+          Custom digital art commissions —
+          bringing your characters to life.
+        </p>
+
+      </div>
+
+      <nav class="footer-nav">
+
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="commission.html">Commission</a>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ════════════════════════════════════════
+     AUTH MODAL
+════════════════════════════════════════ -->
+<div class="modal-overlay"
+     id="authModal"
+     onclick="handleOverlay(event)">
+
+  <div class="modal">
+
+    <button class="modal-close"
+            onclick="closeModal()">
+
+      &times;
+
+    </button>
+
+    <!-- TABS -->
+    <div class="modal-tabs">
+
+      <div class="m-tab active"
+           id="mtab-login"
+           onclick="switchTab('login')">
+
+        Log In
+
+      </div>
+
+      <div class="m-tab"
+           id="mtab-signup"
+           onclick="switchTab('signup')">
+
+        Sign Up
+
+      </div>
+
+    </div>
+
+    <!-- LOGIN -->
+    <div class="fpanel active"
+         id="fp-login">
+
+      <div class="auth-error"
+           id="loginError"></div>
+
+      <form id="loginForm">
+
+        <div class="fg">
+
+          <label>Username</label>
+
+          <input type="text"
+                 name="username"
+                 required>
+
+        </div>
+
+        <div class="fg">
+
+          <label>Password</label>
+
+          <input type="password"
+                 name="password"
+                 required>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-modal">
+
+          Log In
+
+        </button>
+
+      </form>
+
+    </div>
+
+    <!-- SIGNUP -->
+    <div class="fpanel"
+         id="fp-signup">
+
+      <div class="auth-error"
+           id="signupError"></div>
+
+      <form id="signupForm">
+
+        <div class="fg">
+
+          <label>Username</label>
+
+          <input type="text"
+                 name="username"
+                 required>
+
+        </div>
+
+        <div class="fg">
+
+          <label>Email</label>
+
+          <input type="email"
+                 name="email"
+                 required>
+
+        </div>
+
+        <div class="fg">
+
+          <label>Password</label>
+
+          <input type="password"
+                 name="password"
+                 required>
+
+        </div>
+
+        <div class="fg">
+
+          <label>Confirm Password</label>
+
+          <input type="password"
+                 name="confirm"
+                 required>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-modal">
+
+          Create Account
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="main.js"></script>
+
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/05/25/00/20260525001556-HTTZ46GH.js" defer></script>
+    
+
+<script>
+
+/* ════════════════════════════════════════
+   CONTACT DASHBOARD
+════════════════════════════════════════ */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const username =
+    localStorage.getItem("username");
+
+  const guestDashboard =
+    document.getElementById("guestDashboard");
+
+  const userDashboard =
+    document.getElementById("userDashboard");
+
+  const dashboardUsername =
+    document.getElementById("dashboardUsername");
+
+  if(username){
+
+    guestDashboard.style.display = "none";
+
+    userDashboard.style.display = "block";
+
+    dashboardUsername.textContent = username;
+
+    loadDashboardOrders();
+
+  }
+
+});
+
+
+/* ════════════════════════════════════════
+   LOAD DASHBOARD ORDERS
+════════════════════════════════════════ */
+
+async function loadDashboardOrders(){
+
+  try {
+
+    const response =
+      await fetch("./orders.php", {
+
+        method: "GET",
+
+        credentials: "same-origin"
+
+      });
+
+    const data =
+      await response.json();
+
+    console.log(data);
+
+    if(data.status !== "success"){
+
+      return;
+
+    }
+
+    const orders =
+      data.orders || [];
+
+    /* TOTAL */
+    document.getElementById("totalOrders")
+      .textContent = orders.length;
+
+    /* PENDING */
+    const pending =
+      orders.filter(order =>
+        order.status === "Pending"
+      ).length;
+
+    document.getElementById("pendingOrders")
+      .textContent = pending;
+
+    /* COMPLETED */
+    const completed =
+      orders.filter(order =>
+        order.status === "Completed"
+      ).length;
+
+    document.getElementById("completedOrders")
+      .textContent = completed;
+
+    /* TABLE */
+    const ordersList =
+      document.getElementById("ordersList");
+
+    if(orders.length === 0){
+
+      ordersList.innerHTML = `
+
+        <div class="empty-orders">
+          No orders yet.
+        </div>
+
+      `;
+
+      return;
+
+    }
+
+    let html = `
+
+      <div class="orders-table-wrap">
+
+        <table class="dashboard-table">
+
+          <thead>
+
+            <tr>
+
+              <th>ID</th>
+              <th>Commission Type</th>
+              <th>Status</th>
+              <th>Date</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+    `;
+
+    const esc = s =>
+      String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+
+    orders
+      .slice(0, 5)
+      .forEach(order => {
+
+        const safeStatus  = esc(order.status);
+        const safeType    = esc(order.type);
+        const safeDate    = esc(order.created_at);
+        const statusClass = order.status
+          .toLowerCase()
+          .replace(/[^a-z0-9-]/g, "");
+
+        html += `
+          <tr>
+            <td>#${Number(order.id)}</td>
+            <td>${safeType}</td>
+            <td><span class="table-status ${statusClass}">${safeStatus}</span></td>
+            <td>${safeDate}</td>
+          </tr>
+        `;
+
+      });
+
+    html += `
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    `;
+
+    ordersList.innerHTML = html;
+
+  }
+
+  catch(err){
+
+    console.error(err);
+
+  }
+
+}
+
+</script>
+</body>
+</html>
