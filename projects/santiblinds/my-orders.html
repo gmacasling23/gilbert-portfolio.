@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/Icon.png" />
+  <title>My Orders — Santi Blinds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300;400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=santi-20261110" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="images/SantiLogoNoBg.png" alt="Santi Blinds logo" class="nav__logo-img" />
+        <span class="nav__brand">SANTI <em>BLINDS</em></span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="process.html">Process</a>
+        <a href="order.html">Order</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__account" id="navAccount"></div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--order">
+    <div class="page-hero__bg"></div>
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="section-label reveal">Account</span>
+        <h1 class="page-hero__title reveal">My<br/><span class="accent">Orders</span></h1>
+        <p class="page-hero__sub reveal">View your orders and follow their progress from the moment they are placed until they are complete.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDERS -->
+  <section class="section order acct" id="ordersApp">
+    <div class="container">
+
+      <div class="order-alert" id="ordersAlert" role="alert" hidden></div>
+      <p class="acct-empty" id="ordersLoading">Loading your orders…</p>
+
+      <!-- Not logged in -->
+      <div class="order-panel order-panel--narrow acct-gate" id="ordersGate" hidden>
+        <h2 class="order-panel__title">Please log in</h2>
+        <p class="order-panel__lead">Log in to your account to see your orders and track their progress.</p>
+        <a href="order.html" class="btn btn--primary">Log in</a>
+      </div>
+
+      <!-- Logged in -->
+      <div id="ordersBody" hidden>
+        <div class="acct-toolbar">
+          <div class="acct-filters" role="group" aria-label="Filter orders">
+            <button type="button" class="acct-filter is-active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="acct-filter" data-filter="active" aria-pressed="false">In progress</button>
+            <button type="button" class="acct-filter" data-filter="Completed" aria-pressed="false">Completed</button>
+            <button type="button" class="acct-filter" data-filter="Cancelled" aria-pressed="false">Cancelled</button>
+          </div>
+          <a href="order.html" class="btn btn--ghost">Place a new order</a>
+        </div>
+        <div class="acct-orders" id="ordersList" aria-live="polite"></div>
+        <p class="acct-empty" id="ordersEmpty" hidden></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">
+            <img src="images/SantiLogoNoBg.png" alt="Santi Blinds logo" class="footer__logo-img" />
+            <span class="footer__logo-text">SANTI <em>BLINDS</em></span>
+          </span>
+          <p>Window coverings designed for light, made for life.</p>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=Santi+Cafe+541+Km.16+MacArthur+Highway+Valenzuela+Metro+Manila+1444&travelmode=driving"
+            target="_blank"
+            rel="noopener"
+            class="footer__map-btn"
+            aria-label="Get directions to Santi Blinds showroom"
+          >
+            <svg class="footer__map-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5zm0 6.75A1.75 1.75 0 1 1 10 5.25a1.75 1.75 0 0 1 0 3.5z" fill="currentColor"/>
+            </svg>
+            <span>541 Km.16 MacArthur Hwy, Valenzuela</span>
+            <svg class="footer__map-arrow" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="footer__nav">
+          <div>
+            <h4>Company</h4>
+            <a href="about.html">About</a>
+            <a href="process.html">Process</a>
+            <a href="gallery.html">Gallery</a>
+          </div>
+          <div>
+            <h4>Products</h4>
+            <a href="products.html">Roller Blinds</a>
+            <a href="products.html">Venetian Blinds</a>
+            <a href="products.html">Roman Blinds</a>
+            <a href="products.html">Motorized</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="contact.html">Get a Quote</a>
+            <a href="mailto:info@santiblinds.com">Email Us</a>
+            <a href="tel:+6328888000">Call Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Santi Blinds. All rights reserved.</p>
+        <p>Modern · Minimal · Refined · Timeless</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="javascript/script.js?v=santi-20261110"></script>
+</body>
+</html>

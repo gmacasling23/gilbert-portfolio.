@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/Icon.png" />
+  <title>Gallery — Santi Blinds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300;400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=santi-20261110" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="images/SantiLogoNoBg.png" alt="Santi Blinds logo" class="nav__logo-img" />
+        <span class="nav__brand">SANTI <em>BLINDS</em></span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="process.html">Process</a>
+        <a href="order.html">Order</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__account" id="navAccount"></div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--gallery">
+    <div class="page-hero__bg"></div>
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="section-label reveal">Portfolio</span>
+        <h1 class="page-hero__title reveal">Light,<br/><span class="accent">Controlled</span></h1>
+        <p class="page-hero__sub reveal">Browse our blind collection — every colour, every style, crafted for your space.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <!-- <div class="marquee">
+    <div class="marquee__track">
+      <span>LIVING ROOM</span><span class="dot">·</span>
+      <span>BEDROOM</span><span class="dot">·</span>
+      <span>HOME OFFICE</span><span class="dot">·</span>
+      <span>DINING</span><span class="dot">·</span>
+      <span>VENETIAN</span><span class="dot">·</span>
+      <span>ROMAN</span><span class="dot">·</span>
+      <span>ROLLER</span><span class="dot">·</span>
+      <span>MOTORIZED</span><span class="dot">·</span>
+      <span>LIVING ROOM</span><span class="dot">·</span>
+      <span>BEDROOM</span><span class="dot">·</span>
+      <span>HOME OFFICE</span><span class="dot">·</span>
+      <span>DINING</span><span class="dot">·</span>
+      <span>VENETIAN</span><span class="dot">·</span>
+      <span>ROMAN</span><span class="dot">·</span>
+      <span>ROLLER</span><span class="dot">·</span>
+      <span>MOTORIZED</span><span class="dot">·</span>
+    </div>
+  </div> -->
+
+  <!-- GALLERY FILTER + GRID -->
+  <section class="gallery-page section">
+    <div class="container">
+
+      <div class="gallery-intro reveal">
+        <div class="gallery-intro__text">
+          <span class="section-label">Our Work</span>
+          <h2 class="section-title">Every Space,<br/>Considered</h2>
+        </div>
+        <p class="gallery-intro__desc">Each blind is selected to suit how light moves through a room, what the client needs, and what the space deserves.</p>
+      </div>
+
+      <!-- FILTER BAR -->
+      <div class="filter-bar reveal" data-delay="80">
+        <button class="filter-btn active" data-filter="all">All Rooms</button>
+        <button class="filter-btn" data-filter="living">Living Room</button>
+        <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+        <button class="filter-btn" data-filter="office">Office</button>
+        <button class="filter-btn" data-filter="dining">Dining</button>
+      </div>
+
+      <!-- MASONRY GALLERY GRID -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <div class="gallery-grid__item gallery-grid__item--tall reveal" data-delay="0" data-room="living">
+          <div class="gallery-grid__fill">
+            <img src="images/1.png" alt="Navy Blue Day & Night Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Living Room</span>
+            <span class="gallery-grid__label">Roller Blinds</span>
+            <span class="gallery-grid__product">Day & Night · Navy Blue</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="80" data-room="bedroom">
+          <div class="gallery-grid__fill">
+            <img src="images/10.png" alt="Jet Black Blackout Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Bedroom</span>
+            <span class="gallery-grid__label">Roller Blinds</span>
+            <span class="gallery-grid__product">Blackout · Jet Black</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="160" data-room="office">
+          <div class="gallery-grid__fill">
+            <img src="images/9.png" alt="Charcoal Grey Day & Night Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Home Office</span>
+            <span class="gallery-grid__label">Roller Blinds</span>
+            <span class="gallery-grid__product">Day & Night · Charcoal</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item gallery-grid__item--wide reveal" data-delay="240" data-room="living">
+          <div class="gallery-grid__fill">
+            <img src="images/4.png" alt="Ivory Embossed Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Living Room</span>
+            <span class="gallery-grid__label">Roman Blinds</span>
+            <span class="gallery-grid__product">Embossed · Ivory White</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="320" data-room="dining">
+          <div class="gallery-grid__fill">
+            <img src="images/14.png" alt="Natural Linen Wood Grain Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Dining Area</span>
+            <span class="gallery-grid__label">Venetian Blinds</span>
+            <span class="gallery-grid__product">Wood Grain · Natural Linen</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item gallery-grid__item--tall reveal" data-delay="400" data-room="bedroom">
+          <div class="gallery-grid__fill">
+            <img src="images/7.png" alt="Soft Lavender Day & Night Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Master Bedroom</span>
+            <span class="gallery-grid__label">Roller Blinds</span>
+            <span class="gallery-grid__product">Day & Night · Lavender</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="480" data-room="office">
+          <div class="gallery-grid__fill">
+            <img src="images/13.png" alt="Dark Grey Wood Grain Venetian Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Office</span>
+            <span class="gallery-grid__label">Venetian Blinds</span>
+            <span class="gallery-grid__product">Wood Grain · Steel Grey</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="560" data-room="living">
+          <div class="gallery-grid__fill">
+            <img src="images/8.png" alt="Walnut Brown Day & Night Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Living Room</span>
+            <span class="gallery-grid__label">Venetian Blinds</span>
+            <span class="gallery-grid__product">Day & Night · Walnut</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item gallery-grid__item--wide reveal" data-delay="640" data-room="dining">
+          <div class="gallery-grid__fill">
+            <img src="images/11.png" alt="Black & White Contrast Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Dining & Kitchen</span>
+            <span class="gallery-grid__label">Roller Blinds</span>
+            <span class="gallery-grid__product">Day & Night · Monochrome</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="720" data-room="bedroom">
+          <div class="gallery-grid__fill">
+            <img src="images/2.png" alt="Dark Chocolate Blackout Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Guest Room</span>
+            <span class="gallery-grid__label">Roller Blinds</span>
+            <span class="gallery-grid__product">Blackout · Dark Chocolate</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item gallery-grid__item--tall reveal" data-delay="800" data-room="office">
+          <div class="gallery-grid__fill">
+            <img src="images/6.png" alt="Deep Purple Day & Night Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Executive Office</span>
+            <span class="gallery-grid__label">Roller Blinds</span>
+            <span class="gallery-grid__product">Day & Night · Deep Purple</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="880" data-room="living">
+          <div class="gallery-grid__fill">
+            <img src="images/12.png" alt="Crimson Red Day & Night Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Living Room</span>
+            <span class="gallery-grid__label">Roller Blinds</span>
+            <span class="gallery-grid__product">Day & Night · Crimson Red</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="960" data-room="dining">
+          <div class="gallery-grid__fill">
+            <img src="images/3.png" alt="Honey Yellow Day & Night Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Dining Area</span>
+            <span class="gallery-grid__label">Roller Blinds</span>
+            <span class="gallery-grid__product">Day & Night · Honey Yellow</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="1040" data-room="bedroom">
+          <div class="gallery-grid__fill">
+            <img src="images/5.png" alt="Tangerine Orange Day & Night Roller Blind" class="gallery-grid__photo" />
+          </div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__tag">Bedroom</span>
+            <span class="gallery-grid__label">Roller Blinds</span>
+            <span class="gallery-grid__product">Day & Night · Tangerine</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY STATS -->
+  <div class="gallery-stats">
+    <div class="container">
+      <div class="gallery-stats__grid">
+        <div class="gallery-stats__item reveal">
+          <span class="gallery-stats__num">35+<span class="gallery-stats__sup">+</span></span>
+          <span class="gallery-stats__label">Spaces Transformed</span>
+        </div>
+        <div class="gallery-stats__item reveal" data-delay="100">
+          <span class="gallery-stats__num">50<span class="gallery-stats__sup">+</span></span>
+          <span class="gallery-stats__label">Design Options</span>
+        </div>
+        <div class="gallery-stats__item reveal" data-delay="200">
+          <span class="gallery-stats__num">98<span class="gallery-stats__sup">%</span></span>
+          <span class="gallery-stats__label">Client Satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox__content">
+      <div class="lightbox__img" id="lightboxImg"></div>
+      <div class="lightbox__meta">
+        <div class="lightbox__info" id="lightboxInfo"></div>
+        <div class="lightbox__counter" id="lightboxCounter"></div>
+      </div>
+      <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+      <button class="lightbox__prev" id="lightboxPrev" aria-label="Previous">←</button>
+      <button class="lightbox__next" id="lightboxNext" aria-label="Next">→</button>
+    </div>
+  </div>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-strip__inner reveal">
+        <div class="cta-strip__text">
+          <h2>Love what you see?</h2>
+          <p>Let's bring the same transformation to your space.</p>
+        </div>
+        <a href="contact.html" class="btn btn--primary">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">
+            <img src="images/SantiLogoNoBg.png" alt="Santi Blinds logo" class="footer__logo-img" />
+            <span class="footer__logo-text">SANTI <em>BLINDS</em></span>
+          </span>
+          <p>Window coverings designed for light, made for life.</p>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=Santi+Cafe+541+Km.16+MacArthur+Highway+Valenzuela+Metro+Manila+1444&travelmode=driving"
+            target="_blank"
+            rel="noopener"
+            class="footer__map-btn"
+            aria-label="Get directions to Santi Blinds showroom"
+          >
+            <svg class="footer__map-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5zm0 6.75A1.75 1.75 0 1 1 10 5.25a1.75 1.75 0 0 1 0 3.5z" fill="currentColor"/>
+            </svg>
+            <span>541 Km.16 MacArthur Hwy, Valenzuela</span>
+            <svg class="footer__map-arrow" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="footer__nav">
+          <div>
+            <h4>Company</h4>
+            <a href="about.html">About</a>
+            <a href="process.html">Process</a>
+            <a href="gallery.html">Gallery</a>
+          </div>
+          <div>
+            <h4>Products</h4>
+            <a href="products.html">Roller Blinds</a>
+            <a href="products.html">Venetian Blinds</a>
+            <a href="products.html">Roman Blinds</a>
+            <a href="products.html">Motorized</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="contact.html">Get a Quote</a>
+            <a href="mailto:info@santiblinds.com">Email Us</a>
+            <a href="tel:+6328888000">Call Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Santi Blinds. All rights reserved.</p>
+        <p>Modern · Minimal · Refined · Timeless</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="javascript/script.js?v=santi-20261110"></script>
+</body>
+</html>

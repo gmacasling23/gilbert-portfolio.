@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/Icon.png" />
+  <title>Order Your Blinds — Santi Blinds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300;400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=santi-20261110" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="images/SantiLogoNoBg.png" alt="Santi Blinds logo" class="nav__logo-img" />
+        <span class="nav__brand">SANTI <em>BLINDS</em></span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="process.html">Process</a>
+        <a href="order.html" class="active">Order</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__account" id="navAccount"></div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--order">
+    <div class="page-hero__bg"></div>
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="section-label reveal">Order</span>
+        <h1 class="page-hero__title reveal">Design Your<br/><span class="accent">Blinds</span></h1>
+        <p class="page-hero__sub reveal">Create a free account, design your blinds and see the price as you go. Place your order straight away, or get a quotation first if you'd like one.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER APP -->
+  <section class="section order" id="orderApp">
+    <div class="container">
+
+      <ol class="order-steps" id="orderSteps" aria-label="Order progress">
+        <li data-step="auth">Account</li>
+        <li data-step="customize">Design</li>
+        <li data-step="quote"><span>Quotation</span><small>(optional)</small></li>
+        <li data-step="review">Place order</li>
+      </ol>
+
+      <div class="order-alert" id="orderAlert" role="alert" hidden></div>
+
+      <!-- ACCOUNT: LOG IN / REGISTER -->
+      <div class="order-panel order-panel--narrow" id="panelAuth" hidden>
+        <h2 class="order-panel__title" tabindex="-1" id="authTitle">Log in</h2>
+        <p class="order-panel__lead" id="authLead">Log in to design your blinds and place your order.</p>
+
+        <form id="custLoginForm" novalidate>
+          <div class="form-group"><label for="lEmail">Email</label><input type="email" id="lEmail" autocomplete="username" required /></div>
+          <div class="form-group">
+            <label for="lPassword">Password</label>
+            <div class="password-field">
+              <input type="password" id="lPassword" autocomplete="current-password" required />
+              <button type="button" class="password-toggle" data-password-toggle="lPassword" aria-label="Show password" aria-pressed="false" title="Show password">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path class="password-eye__outline" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="password-eye__slash" d="m3 3 18 18"/></svg>
+              </button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full" id="loginBtn">Log In</button>
+          <p class="order-switch">New to Santi Blinds? <button type="button" class="order-link" id="showRegisterBtn">Create an account</button></p>
+        </form>
+
+        <form id="custRegisterForm" novalidate hidden>
+          <div class="form-group"><label for="rName">Full name</label><input id="rName" autocomplete="name" required /></div>
+          <div class="form-row">
+            <div class="form-group"><label for="rEmail">Email</label><input type="email" id="rEmail" autocomplete="email" required /></div>
+            <div class="form-group">
+              <label for="rPhone">Contact number</label>
+              <div class="phone-input">
+                <span class="phone-input__prefix" aria-hidden="true">+63</span>
+                <input type="tel" id="rPhone" autocomplete="tel-national" inputmode="tel" placeholder="917 123 4567" required />
+              </div>
+            </div>
+          </div>
+          <div class="form-group"><label for="rAddress">Installation / delivery address</label><input id="rAddress" autocomplete="street-address" required /></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="rPassword">Password <span class="order-opt">(8+ characters)</span></label>
+              <div class="password-field">
+                <input type="password" id="rPassword" autocomplete="new-password" minlength="8" required />
+                <button type="button" class="password-toggle" data-password-toggle="rPassword" aria-label="Show password" aria-pressed="false" title="Show password">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path class="password-eye__outline" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="password-eye__slash" d="m3 3 18 18"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="rConfirm">Confirm password</label>
+              <div class="password-field">
+                <input type="password" id="rConfirm" autocomplete="new-password" required />
+                <button type="button" class="password-toggle" data-password-toggle="rConfirm" aria-label="Show password" aria-pressed="false" title="Show password">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path class="password-eye__outline" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="password-eye__slash" d="m3 3 18 18"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="rConsent" required />
+            <label for="rConsent" class="form-check__label">I agree to Santi Blinds storing my details to manage my account, prepare quotations, process my orders and contact me about them.</label>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full" id="registerBtn">Create Account</button>
+          <p class="order-switch">Already registered? <button type="button" class="order-link" id="showLoginBtn">Log in</button></p>
+        </form>
+      </div>
+
+      <!-- DESIGN -->
+      <div class="order-panel" id="panelCustomize" hidden>
+        <h2 class="order-panel__title" tabindex="-1">Design your blinds</h2>
+        <div class="order-customize">
+          <form id="customizeForm" class="order-customize__form" novalidate>
+            <fieldset class="order-fieldset">
+              <legend>Blind type</legend>
+              <div class="order-types" id="typeTiles"></div>
+            </fieldset>
+
+            <div class="form-row">
+              <div class="form-group"><label for="cWidth">Wi  dth (cm)</label><input type="number" id="cWidth" inputmode="decimal" step="0.1" required /></div>
+              <div class="form-group"><label for="cHeight">Height (cm)</label><input type="number" id="cHeight" inputmode="decimal" step="0.1" required /></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label for="cQty">Quantity (windows)</label><input type="number" id="cQty" min="1" step="1" value="1" required /></div>
+              <div class="form-group"><label for="cMaterial">Material</label><select id="cMaterial"></select></div>
+            </div>
+
+            <fieldset class="order-fieldset">
+              <legend>Colour <span id="colorName" class="order-opt"></span></legend>
+              <div class="order-swatches" id="swatches"></div>
+            </fieldset>
+
+            <button type="submit" class="btn btn--primary btn--full" id="addItemBtn">Add to Order</button>
+          </form>
+
+          <aside class="order-preview" aria-label="Live preview">
+            <div class="order-preview__stage"><div class="order-window" id="previewWindow"><div class="order-blind" id="previewBlind"></div></div></div>
+            <dl class="order-preview__list" id="previewList"></dl>
+            <div class="order-preview__total">
+              <span>Estimated price</span>
+              <strong id="previewTotal">₱0.00</strong>
+              <small id="previewUnit"></small>
+            </div>
+            <p class="order-hint">Estimates only. Your final price is confirmed after an on-site measurement.</p>
+          </aside>
+        </div>
+
+        <div class="order-history" id="cartCard" hidden>
+          <h3>Blinds in your order</h3>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Blind</th><th>Size (cm)</th><th>Qty</th><th>Price</th><th></th></tr></thead>
+              <tbody id="cartBody"></tbody>
+            </table>
+          </div>
+          <div class="order-preview__total"><span>Estimated total</span><strong id="cartTotal">₱0.00</strong></div>
+          <div class="order-actions">
+            <button type="button" class="btn btn--primary" id="orderNowBtn">Place Order</button>
+            <button type="button" class="btn btn--ghost" id="getQuoteBtn">Request a Quotation</button>
+          </div>
+        </div>
+
+        <div class="order-history" id="savedQuotesCard" hidden>
+          <h3>Your saved quotations</h3>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Quotation</th><th>Items</th><th>Total</th><th>Valid until</th><th>Status</th><th></th></tr></thead>
+              <tbody id="savedQuotesBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUOTATION (optional) -->
+      <div class="order-panel order-panel--narrow" id="panelQuote" hidden>
+        <h2 class="order-panel__title" tabindex="-1">Your quotation</h2>
+        <p class="order-panel__lead">Your request is sent to Santi Blinds for review. The admin will finalize the pricing and return the quotation here. You can place your order after it is returned.</p>
+        <div class="order-quote" id="quoteDoc">
+          <h4 id="quoteRef"></h4>
+          <p class="order-hint" id="quoteMeta"></p>
+          <div class="table-scroll order-history">
+            <table>
+              <thead><tr><th>Blind</th><th>Size (cm)</th><th>Qty</th><th>Unit price</th><th>Total</th></tr></thead>
+              <tbody id="quoteBody"></tbody>
+            </table>
+          </div>
+          <div class="order-preview__total"><span>Quoted total</span><strong id="quoteTotal"></strong></div>
+          <p class="order-hint">Final price is confirmed after an on-site measurement.</p>
+        </div>
+        <div class="order-actions">
+          <button type="button" class="btn btn--primary" id="quoteContinueBtn">Continue to Place Order</button>
+          <button type="button" class="btn btn--ghost" id="quotePrintBtn">Print / Save PDF</button>
+          <button type="button" class="btn btn--ghost" id="quoteBackBtn">Back to Design</button>
+        </div>
+      </div>
+
+      <!-- PLACE ORDER -->
+      <div class="order-panel" id="panelReview" hidden>
+        <h2 class="order-panel__title" tabindex="-1">Place your order</h2>
+        <div class="order-review">
+          <div class="order-card">
+            <h3>Your blinds <span id="reviewRef"></span></h3>
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th>Blind</th><th>Size (cm)</th><th>Qty</th><th>Price</th></tr></thead>
+                <tbody id="reviewBody"></tbody>
+              </table>
+            </div>
+            <div class="order-preview__total"><span>Total</span><strong id="reviewTotal"></strong></div>
+            <button type="button" class="btn btn--ghost btn--sm" id="reviewBackBtn">Back</button>
+          </div>
+
+          <form class="order-card" id="orderForm" novalidate>
+            <h3>Confirm your details</h3>
+            <dl class="order-spec" id="reviewAccount"></dl>
+            <div class="form-group"><label for="oAddress">Installation / delivery address</label><input id="oAddress" autocomplete="street-address" required /></div>
+            <p class="order-hint">Our team will call to confirm your order and schedule the measurement. No payment is collected on this site.</p>
+            <button type="submit" class="btn btn--primary btn--full" id="placeOrderBtn">Place Order</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- DONE -->
+      <div class="order-panel order-panel--narrow order-done" id="panelDone" hidden>
+        <h2 class="order-panel__title" tabindex="-1">Order received</h2>
+        <p class="order-done__ref" id="doneRef"></p>
+        <p class="order-panel__lead" id="doneMsg"></p>
+        <div class="order-quote order-receipt" id="receiptDoc" aria-labelledby="receiptTitle">
+          <h4 id="receiptTitle">SANTI BLINDS — ORDER RECEIPT</h4>
+          <p class="order-hint" id="receiptMeta"></p>
+          <dl class="order-spec" id="receiptDetails"></dl>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Blind</th><th>Material</th><th>Colour</th><th>Size (cm)</th><th>Qty</th><th>Unit price</th><th>Total</th></tr></thead>
+              <tbody id="receiptItems"></tbody>
+            </table>
+          </div>
+          <div class="order-preview__total"><span>Order total</span><strong id="receiptTotal"></strong></div>
+          <p class="order-hint">No payment was collected when this order was placed. Final price is confirmed after an on-site measurement.</p>
+        </div>
+        <div class="order-actions">
+          <button type="button" class="btn btn--ghost" id="receiptPrintBtn">Print / Save PDF</button>
+          <button type="button" class="btn btn--ghost" id="receiptPngBtn">Download PNG</button>
+          <button type="button" class="btn btn--primary" id="newDesignBtn">Design Another</button>
+          <a href="index.html" class="btn btn--ghost">Back to Home</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">
+            <img src="images/SantiLogoNoBg.png" alt="Santi Blinds logo" class="footer__logo-img" />
+            <span class="footer__logo-text">SANTI <em>BLINDS</em></span>
+          </span>
+          <p>Window coverings designed for light, made for life.</p>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=Santi+Cafe+541+Km.16+MacArthur+Highway+Valenzuela+Metro+Manila+1444&travelmode=driving"
+            target="_blank"
+            rel="noopener"
+            class="footer__map-btn"
+            aria-label="Get directions to Santi Blinds showroom"
+          >
+            <svg class="footer__map-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5zm0 6.75A1.75 1.75 0 1 1 10 5.25a1.75 1.75 0 0 1 0 3.5z" fill="currentColor"/>
+            </svg>
+            <span>541 Km.16 MacArthur Hwy, Valenzuela</span>
+            <svg class="footer__map-arrow" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="footer__nav">
+          <div>
+            <h4>Company</h4>
+            <a href="about.html">About</a>
+            <a href="process.html">Process</a>
+            <a href="gallery.html">Gallery</a>
+          </div>
+          <div>
+            <h4>Products</h4>
+            <a href="products.html">Roller Blinds</a>
+            <a href="products.html">Venetian Blinds</a>
+            <a href="products.html">Roman Blinds</a>
+            <a href="products.html">Motorized</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="contact.html">Get a Quote</a>
+            <a href="mailto:info@santiblinds.com">Email Us</a>
+            <a href="tel:+6328888000">Call Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Santi Blinds. All rights reserved.</p>
+        <p>Modern · Minimal · Refined · Timeless</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="javascript/phone-format.js?v=santi-20261110"></script>
+  <script src="javascript/script.js?v=santi-20261110"></script>
+</body>
+</html>

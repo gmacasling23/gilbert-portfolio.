@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/Icon.png" />
+  <title>Products — Santi Blinds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300;400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=santi-20261110" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="images/SantiLogoNoBg.png" alt="Santi Blinds logo" class="nav__logo-img" />
+        <span class="nav__brand">SANTI <em>BLINDS</em></span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="process.html">Process</a>
+        <a href="order.html">Order</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__account" id="navAccount"></div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--products">
+    <div class="page-hero__bg"></div>
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="section-label reveal">Our Collection</span>
+        <h1 class="page-hero__title reveal">The<br/><span class="accent">Collection</span></h1>
+        <p class="page-hero__sub reveal">Every blind engineered for beauty, privacy, and light control — tailored to your exact space.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <!-- <div class="marquee">
+    <div class="marquee__track">
+      <span>ROLLER</span><span class="dot">·</span><span>VENETIAN</span><span class="dot">·</span>
+      <span>ROMAN</span><span class="dot">·</span><span>VERTICAL</span><span class="dot">·</span>
+      <span>CELLULAR</span><span class="dot">·</span><span>MOTORIZED</span><span class="dot">·</span>
+      <span>ROLLER</span><span class="dot">·</span><span>VENETIAN</span><span class="dot">·</span>
+      <span>ROMAN</span><span class="dot">·</span><span>VERTICAL</span><span class="dot">·</span>
+      <span>CELLULAR</span><span class="dot">·</span><span>MOTORIZED</span><span class="dot">·</span>
+    </div>
+  </div> -->
+
+  <!-- FILTER BAR -->
+  <section class="products-page section">
+    <div class="container">
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="fabric">Fabric</button>
+        <button class="filter-btn" data-filter="hard">Hard Slat</button>
+        <button class="filter-btn" data-filter="smart">Smart</button>
+      </div>
+
+      <div class="products__grid products__grid--page">
+
+        <!-- ROLLER -->
+        <article class="product-card reveal" data-delay="0" data-category="fabric">
+          <div class="product-card__img product-card__img--roller">
+            <img src="images/Product_1.png" alt="Roller Blinds fabric swatches" class="product-card__photo" />
+            <div class="product-card__slat-deco"></div>
+            <span class="product-card__tag">Fabric</span>
+          </div>
+          <div class="product-card__body">
+            <h3>Roller Blinds</h3>
+            <p>Clean-lined and effortlessly modern. Available in blackout, light-filtering, and sheer fabrics in over 30 colour options.</p>
+            <ul class="product-features">
+              <li>Blackout, light-filter & sheer options</li>
+              <li>30+ fabric colours</li>
+              <li>Custom sizing to the millimetre</li>
+              <li>Chain or spring-operated</li>
+            </ul>
+            <a href="contact.html" class="btn btn--primary">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- VENETIAN -->
+        <article class="product-card reveal" data-delay="100" data-category="hard">
+          <div class="product-card__img product-card__img--venetian">
+            <img src="images/Product_2.png" alt="Venetian Blinds close-up slats" class="product-card__photo" />
+            <div class="product-card__slat-deco"></div>
+            <span class="product-card__tag">Hard Slat</span>
+          </div>
+          <div class="product-card__body">
+            <h3>Venetian Blinds</h3>
+            <p>Timeless aluminium and wood slats that offer precise tilt control over light and privacy. A perennial classic.</p>
+            <ul class="product-features">
+              <li>Aluminium & real wood options</li>
+              <li>25mm & 50mm slat widths</li>
+              <li>Tilt, raise, & lower control</li>
+              <li>Wide colour & finish range</li>
+            </ul>
+            <a href="contact.html" class="btn btn--primary">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- ROMAN -->
+        <article class="product-card reveal" data-delay="200" data-category="fabric">
+          <div class="product-card__img product-card__img--roman">
+            <img src="images/Product_3.png" alt="Roman Blinds fabric swatch collection" class="product-card__photo" />
+            <div class="product-card__slat-deco"></div>
+            <span class="product-card__tag">Fabric</span>
+          </div>
+          <div class="product-card__body">
+            <h3>Roman Blinds</h3>
+            <p>Soft fabric folds that add warmth and texture — a refined choice for living rooms and bedrooms that breathe.</p>
+            <ul class="product-features">
+              <li>Linen, cotton & blackout fabrics</li>
+              <li>Flat, looped & hobbled fold styles</li>
+              <li>Lining options available</li>
+              <li>Custom fabric or choose from range</li>
+            </ul>
+            <a href="contact.html" class="btn btn--primary">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- VERTICAL -->
+        <article class="product-card reveal" data-delay="300" data-category="fabric">
+          <div class="product-card__img product-card__img--vertical">
+            <img src="images/Product_4.png" alt="Vertical Blinds roller fabric catalogue" class="product-card__photo" />
+            <div class="product-card__slat-deco"></div>
+            <span class="product-card__tag">Fabric</span>
+          </div>
+          <div class="product-card__body">
+            <h3>Vertical Blinds</h3>
+            <p>Ideal for large windows and sliding doors. Graceful, functional, and boldly architectural in scale.</p>
+            <ul class="product-features">
+              <li>Fabric & PVC louvre options</li>
+              <li>89mm & 127mm louvre widths</li>
+              <li>Draw left, right, or split</li>
+              <li>Great for floor-to-ceiling spans</li>
+            </ul>
+            <a href="contact.html" class="btn btn--primary">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- CELLULAR -->
+        <article class="product-card reveal" data-delay="400" data-category="fabric">
+          <div class="product-card__img product-card__img--cellular">
+            <img src="images/Product_5.png" alt="Cellular Blinds blackout fabric book" class="product-card__photo" />
+            <div class="product-card__slat-deco"></div>
+            <span class="product-card__tag">Fabric</span>
+          </div>
+          <div class="product-card__body">
+            <h3>Cellular / Honeycomb</h3>
+            <p>Energy-efficient insulation with a soft, contemporary face. The smart choice for every climate and budget.</p>
+            <ul class="product-features">
+              <li>Single, double & triple cell</li>
+              <li>Excellent thermal insulation</li>
+              <li>Light-filtering & blackout</li>
+              <li>Top-down / bottom-up available</li>
+            </ul>
+            <a href="contact.html" class="btn btn--primary">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- MOTORIZED -->
+        <article class="product-card reveal" data-delay="500" data-category="smart">
+          <div class="product-card__img product-card__img--motorized">
+            <img src="images/Product_6.png" alt="Motorized Blinds elegance fabric catalogue" class="product-card__photo" />
+            <div class="product-card__slat-deco"></div>
+            <span class="product-card__tag">Smart</span>
+          </div>
+          <div class="product-card__body">
+            <h3>Motorized Blinds</h3>
+            <p>Smart automation meets silent precision. Control any blind with a touch, a remote, or your voice.</p>
+            <ul class="product-features">
+              <li>Compatible with all blind types</li>
+              <li>App, remote & voice control</li>
+              <li>Smart home integration</li>
+              <li>Programmable schedules</li>
+            </ul>
+            <a href="contact.html" class="btn btn--primary">Enquire Now</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FABRIC SAMPLES SHOWCASE -->
+  <section class="samples-showcase section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Material Library</span>
+        <h2 class="section-title">See It Before You<br/>Decide</h2>
+        <p class="section-desc">Browse our extensive swatch library — over 200 fabrics, textures, and finishes, available to view at our showroom or delivered to your door.</p>
+      </div>
+      <div class="samples-showcase__strip reveal">
+        <div class="samples-showcase__item samples-showcase__item--wide">
+          <img src="images/Product_1.png" alt="Roller blind fabric swatches spread" class="samples-showcase__photo" />
+          <div class="samples-showcase__overlay">
+            <span class="samples-showcase__label">Colour Range</span>
+            <p>30+ fabric tones</p>
+          </div>
+        </div>
+        <div class="samples-showcase__item">
+          <img src="images/Product_3.png" alt="Neutral and grey swatch book" class="samples-showcase__photo" />
+          <div class="samples-showcase__overlay">
+            <span class="samples-showcase__label">Neutral Palette</span>
+            <p>Timeless greys & creams</p>
+          </div>
+        </div>
+        <div class="samples-showcase__item">
+          <img src="images/Product_4.png" alt="Roller blind technical catalogue" class="samples-showcase__photo" />
+          <div class="samples-showcase__overlay">
+            <span class="samples-showcase__label">Technical Spec</span>
+            <p>Full data on every fabric</p>
+          </div>
+        </div>
+        <div class="samples-showcase__item samples-showcase__item--wide">
+          <img src="images/Product_6.png" alt="Elegance fabric catalogue page" class="samples-showcase__photo" />
+          <div class="samples-showcase__overlay">
+            <span class="samples-showcase__label">Elegance Series</span>
+            <p>Premium woven textures</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SANTI STRIP -->
+  <section class="why-strip section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Why Choose Santi</span>
+        <h2 class="section-title">Built to Last,<br/>Designed to Impress</h2>
+      </div>
+      <div class="why__grid">
+        <div class="why-item reveal" data-delay="0">
+          <span class="why-item__icon">✦</span>
+          <h4>Custom Made</h4>
+          <p>Every blind is made to your exact window measurements — no off-the-shelf compromises.</p>
+        </div>
+        <div class="why-item reveal" data-delay="100">
+          <span class="why-item__icon">✦</span>
+          <h4>Premium Materials</h4>
+          <p>We source only durable, quality-tested fabrics, aluminium, and hardware from trusted suppliers.</p>
+        </div>
+        <div class="why-item reveal" data-delay="200">
+          <span class="why-item__icon">✦</span>
+          <h4>Expert Installation</h4>
+          <p>Our trained installers ensure every blind is fitted perfectly, safely, and beautifully.</p>
+        </div>
+        <div class="why-item reveal" data-delay="300">
+          <span class="why-item__icon">✦</span>
+          <h4>2-Year Warranty</h4>
+          <p>Every product comes backed by our two-year craftsmanship warranty for total peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-strip__inner reveal">
+        <div class="cta-strip__text">
+          <h2>Not sure which product is right for you?</h2>
+          <p>Our consultants will guide you — free, no obligation.</p>
+        </div>
+        <a href="contact.html" class="btn btn--primary">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">
+            <img src="images/SantiLogoNoBg.png" alt="Santi Blinds logo" class="footer__logo-img" />
+            <span class="footer__logo-text">SANTI <em>BLINDS</em></span>
+          </span>
+          <p>Window coverings designed for light, made for life.</p>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=Santi+Cafe+541+Km.16+MacArthur+Highway+Valenzuela+Metro+Manila+1444&travelmode=driving"
+            target="_blank"
+            rel="noopener"
+            class="footer__map-btn"
+            aria-label="Get directions to Santi Blinds showroom"
+          >
+            <svg class="footer__map-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5zm0 6.75A1.75 1.75 0 1 1 10 5.25a1.75 1.75 0 0 1 0 3.5z" fill="currentColor"/>
+            </svg>
+            <span>541 Km.16 MacArthur Hwy, Valenzuela</span>
+            <svg class="footer__map-arrow" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="footer__nav">
+          <div>
+            <h4>Company</h4>
+            <a href="about.html">About</a>
+            <a href="process.html">Process</a>
+            <a href="gallery.html">Gallery</a>
+          </div>
+          <div>
+            <h4>Products</h4>
+            <a href="products.html">Roller Blinds</a>
+            <a href="products.html">Venetian Blinds</a>
+            <a href="products.html">Roman Blinds</a>
+            <a href="products.html">Motorized</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="contact.html">Get a Quote</a>
+            <a href="mailto:info@santiblinds.com">Email Us</a>
+            <a href="tel:+6328888000">Call Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Santi Blinds. All rights reserved.</p>
+        <p>Modern · Minimal · Refined · Timeless</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="javascript/script.js?v=santi-20261110"></script>
+</body>
+</html>
