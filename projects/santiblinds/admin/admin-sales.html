@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales &amp; Revenue — Santi Blinds Admin</title>
+  <link rel="icon" type="image/png" href="../images/Icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300;400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css?v=santi-20261110" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__brand">
+        <img src="../images/SantiLogoNoBg.png" alt="Santi Blinds logo" />
+        <span>SANTI <em>BLINDS</em></span>
+      </div>
+      <span class="section-label" style="padding-left:1.75rem;">Admin Panel</span>
+
+      <nav class="admin-nav">
+        <a href="admin-dashboard.html" class="admin-nav__link">Dashboard</a>
+        <a href="admin-orders.html" class="admin-nav__link">Orders</a>
+        <a href="admin-quotations.html" class="admin-nav__link">Quotations</a>
+        <a href="admin-customizations.html" class="admin-nav__link">Customizations</a>
+        <a href="admin-inventory.html" class="admin-nav__link">Inventory</a>
+        <a href="admin-products.html" class="admin-nav__link">Add Products</a>
+        <a href="admin-sales.html" class="admin-nav__link active">Sales & Revenue</a>
+        <a href="admin-customers.html" class="admin-nav__link">Customers</a>
+        <a href="admin-reports.html" class="admin-nav__link">Reports</a>
+        <a href="admin-audit.html" class="admin-nav__link">Audit Log</a>
+      </nav>
+
+      <div class="admin-sidebar__footer">
+        <span id="adminName">—</span>
+        <button id="logoutBtn" class="link-arrow">Log Out <span>→</span></button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-view__header">
+        <h1 class="section-title">Sales &amp; Revenue</h1>
+        <p class="section-desc">Revenue from completed and paid orders, by month and by product.</p>
+      </div>
+      <div class="admin-stats" id="salesStats"></div>
+      <div class="admin-grid-2">
+        <div class="admin-card">
+          <h3>Revenue by Month</h3>
+          <div class="admin-table-wrap">
+            <table class="admin-table" id="salesByMonthTable">
+              <thead><tr><th>Month</th><th>Orders</th><th>Revenue</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3>Revenue by Product</h3>
+          <div class="admin-table-wrap">
+            <table class="admin-table" id="salesByProductTable">
+              <thead><tr><th>Product</th><th>Units</th><th>Revenue</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../javascript/script.js?v=santi-20261110"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orders — Santi Blinds Admin</title>
+  <link rel="icon" type="image/png" href="../images/Icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300;400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css?v=santi-20261110" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__brand">
+        <img src="../images/SantiLogoNoBg.png" alt="Santi Blinds logo" />
+        <span>SANTI <em>BLINDS</em></span>
+      </div>
+      <span class="section-label" style="padding-left:1.75rem;">Admin Panel</span>
+
+      <nav class="admin-nav">
+        <a href="admin-dashboard.html" class="admin-nav__link">Dashboard</a>
+        <a href="admin-orders.html" class="admin-nav__link active">Orders</a>
+        <a href="admin-quotations.html" class="admin-nav__link">Quotations</a>
+        <a href="admin-customizations.html" class="admin-nav__link">Customizations</a>
+        <a href="admin-inventory.html" class="admin-nav__link">Inventory</a>
+        <a href="admin-products.html" class="admin-nav__link">Add Products</a>
+        <a href="admin-sales.html" class="admin-nav__link">Sales &amp; Revenue</a>
+        <a href="admin-customers.html" class="admin-nav__link">Customers</a>
+        <a href="admin-reports.html" class="admin-nav__link">Reports</a>
+        <a href="admin-audit.html" class="admin-nav__link">Audit Log</a>
+      </nav>
+
+      <div class="admin-sidebar__footer">
+        <span id="adminName">—</span>
+        <button id="logoutBtn" class="link-arrow">Log Out <span>→</span></button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-view__header">
+        <h1 class="section-title">Orders</h1>
+        <p class="section-desc">View each customer's specification and update the order status.</p>
+      </div>
+      <div class="admin-toolbar">
+        <input type="text" id="orderSearch" placeholder="Search customer or product…" />
+        <input type="date" id="orderFrom" aria-label="Orders from date" />
+        <input type="date" id="orderTo" aria-label="Orders through date" />
+        <select id="orderPaymentFilter" aria-label="Filter orders by payment method">
+          <option value="">All payment methods</option><option>Cash</option><option>GCash</option><option>Bank Transfer</option>
+        </select>
+        <select id="orderStatusFilter">
+          <option value="">All statuses</option><option>Pending</option><option>Processing</option>
+          <option>Completed</option><option>Cancelled</option>
+        </select>
+        <select id="orderArchiveFilter" aria-label="Filter orders by archive status">
+          <option value="0">Active orders</option>
+          <option value="1">Archived orders</option>
+          <option value="all">All orders</option>
+        </select>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table" id="ordersTable">
+          <thead><tr><th>ID</th><th>Customer</th><th>Product</th><th>Qty</th><th>Amount</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="admin-pagination" id="ordersPagination"></div>
+    </main>
+  </div>
+
+  <div class="admin-modal" id="orderModal" hidden>
+    <div class="admin-modal__panel">
+      <button class="admin-modal__close" data-close>&times;</button>
+      <h3>Order #<span id="omId"></span></h3>
+      <div class="admin-modal__grid">
+        <div><span class="admin-modal__label">Customer</span><p id="omCustomer"></p></div>
+        <div><span class="admin-modal__label">Contact No.</span><p id="omPhone"></p></div>
+        <div><span class="admin-modal__label">Email</span><p id="omEmail"></p></div>
+        <div><span class="admin-modal__label">Address</span><p id="omAddress"></p></div>
+        <div><span class="admin-modal__label">Order Date</span><p id="omDate"></p></div>
+        <div><span class="admin-modal__label">Order Total</span><p id="omTotal"></p></div>
+        <div><span class="admin-modal__label">Source</span><p id="omSource"></p></div>
+      </div>
+      <div>
+        <span class="admin-modal__label">Customer Specification</span>
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="omItems">
+            <thead><tr><th>Product</th><th>Material</th><th>Colour</th><th>W × H (cm)</th><th>Qty</th><th>Unit Price</th><th>Total</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="omStatus">Update Status</label>
+        <select id="omStatus">
+          <option>Pending</option><option>Processing</option><option>Completed</option><option>Cancelled</option>
+        </select>
+      </div>
+      <div class="form-group" id="omPayWrap" hidden>
+        <label for="omPayment">Payment Method (recorded as a sale)</label>
+        <select id="omPayment"><option>Cash</option><option>GCash</option><option>Bank Transfer</option></select>
+      </div>
+      <p id="omMsg"></p>
+      <button id="omSaveBtn" class="btn btn--primary btn--full">Save Status</button>
+    </div>
+  </div>
+
+  <script src="../javascript/script.js?v=santi-20261110"></script>
+</body>
+</html>

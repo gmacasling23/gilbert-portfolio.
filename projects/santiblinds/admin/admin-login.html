@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login — Santi Blinds</title>
+  <link rel="icon" type="image/png" href="../images/Icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300;400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css?v=santi-20261110" />
+</head>
+<body class="admin-login-body">
+
+  <div class="admin-login">
+    <div class="admin-login__card">
+      <div class="admin-login__brand">
+        <img src="../images/SantiLogoNoBg.png" alt="Santi Blinds logo" />
+        <span>SANTI <em>BLINDS</em></span>
+      </div>
+      <span class="section-label" style="text-align:center; display:block;">Admin Panel</span>
+      <h1 class="admin-login__title">Sign In</h1>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-field">
+            <input type="password" id="password" name="password" autocomplete="current-password" required />
+            <button type="button" class="password-toggle" data-password-toggle="password" aria-label="Show password" aria-pressed="false" title="Show password">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path class="password-eye__outline" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="password-eye__slash" d="m3 3 18 18"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <p id="loginError" class="admin-login__error" hidden></p>
+
+        <button type="submit" class="btn btn--primary btn--full">Log In</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../javascript/script.js?v=santi-20261110"></script>
+</body>
+</html>
